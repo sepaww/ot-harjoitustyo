@@ -1,0 +1,94 @@
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit c311f36c13921aa5b11af81601ebd659e8b16599
+Author: Tarmo <tarmo.lindfors@gmail.com>
+Date:   Tue Nov 1 15:53:53 2022 +0200
+
+    eka ja kolmas muutokset
+
+ eka.txt    | 249 ++++---------------------------------------------------------
+ kolmas.txt |   2 +-
+ 2 files changed, 17 insertions(+), 234 deletions(-)
+
+commit 983725e1750b0c274231a891e507dd96677a4bb8
+Author: Tarmo <tarmo.lindfors@gmail.com>
+Date:   Tue Nov 1 15:46:50 2022 +0200
+
+    nimi vaihto
+
+ tiedosto.txt => eka.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 1ced14b28c7469fbf844910f3a6c8ce86c40ad5b
+Author: Tarmo <tarmo.lindfors@gmail.com>
+Date:   Tue Nov 1 15:45:45 2022 +0200
+
+    toinen pois
+
+ toinen.txt | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit f4a62fec4d3504f8d0a22d121fd0fb35cb5a5080
+Author: Tarmo <tarmo.lindfors@gmail.com>
+Date:   Tue Nov 1 15:44:09 2022 +0200
+
+    tiedosto.txt muokkaus
+
+ tiedosto.txt | 315 +++++++++++++++++++----------------------------------------
+ 1 file changed, 101 insertions(+), 214 deletions(-)
+
+commit f8d8251b068e6e4096c6a727841584b37f28a316
+Author: Tarmo <tarmo.lindfors@gmail.com>
+Date:   Tue Nov 1 15:41:19 2022 +0200
+
+    teksti lisä
+
+ tiedosto.txt | 1507 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 1507 insertions(+)
+
+commit ab357533bc51ad49ef10d1d43633f7280867b030
+Author: Tarmo <tarmo.lindfors@gmail.com>
+Date:   Tue Nov 1 14:55:45 2022 +0200
+
+    stuff lisa
+
+ stuff/kama.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 70399013bf269309d803c126266c093b313c14de
+Author: Tarmo <tarmo.lindfors@gmail.com>
+Date:   Tue Nov 1 14:54:01 2022 +0200
+
+    muutos 3 ja 2
+
+ kolmas.txt | 1 +
+ toinen.txt | 1 +
+ 2 files changed, 2 insertions(+)
+
+commit 40534fbff37ef76dd962be4af0bcef6a5fe603e4
+Author: Tarmo <tarmo.lindfors@gmail.com>
+Date:   Tue Nov 1 14:52:16 2022 +0200
+
+    kolmas lisätty
+
+ kolmas.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 7f484cfca8cb7b406f9f2dd75e96129ad04261b0
+Author: Tarmo <tarmo.lindfors@gmail.com>
+Date:   Tue Nov 1 14:39:17 2022 +0200
+
+    muutos ja lisäys
+
+ tiedosto.txt | 3 +++
+ toinen.txt   | 0
+ 2 files changed, 3 insertions(+)
+
+commit 08bdc0121b950e8838c30403d7070b5fee2bbd31
+Author: Tarmo <tarmo.lindfors@gmail.com>
+Date:   Tue Nov 1 14:34:23 2022 +0200
+
+    tiedosto.txt luotu
+
+ tiedosto.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
