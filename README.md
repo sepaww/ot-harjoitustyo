@@ -4,5 +4,5 @@
 ***tosi lihava***
 xdxdxdxd
 [gitlog:](laskarit/viikko1/gitlog.txt)
-
-[komentorivi:](ot-harjoitustyo/laskarit/viikko1/komentorivi.txt)
+ja
+[komentorivi:](laskarit/viikko1/komentorivi.txt)
