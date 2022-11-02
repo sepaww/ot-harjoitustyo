@@ -68,15 +68,15 @@ class TestKassapaate(unittest.TestCase):
       self.maksu.lataa_rahaa(400)
       self.assertEqual(self.kassa.syo_maukkaasti_kortilla(self.maksu), True)
       self.assertEqual(self.kassa.maukkaat, 1)
-      self.assertEqual(self.kassa.kassassarahaa, 100400)
+      self.assertEqual(self.kassa.kassassa_rahaa, 100000)
     def test_lataa_vahan(self):
       summa=-1
       self.assertEqual(self.kassa.lataa_rahaa_kortille(self.maksu, summa), None)
-      self.assertEqual(self.kassa.kassassarahaa, 100000)
+      self.assertEqual(self.kassa.kassassa_rahaa, 100000)
       
         
     def test_lataa_vahan(self):
       summa=5
       self.assertEqual(self.kassa.lataa_rahaa_kortille(self.maksu, summa), None)
-      self.assertEqual(self.kassa.kassassarahaa, 100005)
+      self.assertEqual(self.kassa.kassassa_rahaa, 100005)
       
