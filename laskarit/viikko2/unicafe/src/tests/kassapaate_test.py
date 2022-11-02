@@ -28,7 +28,7 @@ class TestKassapaate(unittest.TestCase):
     def test_edulkatiso(self):
       kat=241
       self.kassa.syo_edullisesti_kateisella(kat)
-      self.assertEqual(kat, 1)
+      self.assertEqual(kat, 241)
       self.assertEqual(self.kassa.edulliset, 1)
       self.assertEqual(self.kassa.kassassa_rahaa, 100240)
     
@@ -42,7 +42,7 @@ class TestKassapaate(unittest.TestCase):
     def test_kalliskatiso(self):
       kat=401
       self.kassa.syo_edullisesti_kateisella(kat)
-      self.assertEqual(kat, 1)
+      self.assertEqual(kat, 401)
       self.assertEqual(self.kassa.maukkaat, 1)
       self.assertEqual(self.kassa.kassassa_rahaa, 100400)
       
@@ -56,7 +56,7 @@ class TestKassapaate(unittest.TestCase):
       self.maksu.lataa_rahaa(240)
       self.assertEqual(self.kassa.syo_edullisesti_kortilla(self.maksu), True)
       self.assertEqual(self.kassa.edulliset, 1)
-      self.assertEqual(self.kassa.kassassa_rahaa, 100240)
+      self.assertEqual(self.kassa.kassassa_rahaa, 100000)
       
     def test_maukaskortpien(self):
       self.maksu.lataa_rahaa(0)
@@ -71,12 +71,12 @@ class TestKassapaate(unittest.TestCase):
       self.assertEqual(self.kassa.kassassarahaa, 100400)
     def test_lataa_vahan(self):
       summa=-1
-      self.assertEqual(self.kassa.lataa_rahaa_kortille(maksu, summa), None)
+      self.assertEqual(self.kassa.lataa_rahaa_kortille(self.maksu, summa), None)
       self.assertEqual(self.kassa.kassassarahaa, 100000)
       
         
     def test_lataa_vahan(self):
       summa=5
-      self.assertEqual(self.kassa.lataa_rahaa_kortille(maksu, summa), None)
+      self.assertEqual(self.kassa.lataa_rahaa_kortille(self.maksu, summa), None)
       self.assertEqual(self.kassa.kassassarahaa, 100005)
       
