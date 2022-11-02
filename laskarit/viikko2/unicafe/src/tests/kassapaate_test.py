@@ -10,7 +10,7 @@ class TestKassapaate(unittest.TestCase):
         
     def test_kassa_alku(self):
       self.assertEqual(self.kassa.kassassa_rahaa, 100000)
-      
+      self.assertNotEqual(self.kassa, None)
     def test_kassa_alku_edu(self):
       self.assertEqual(self.kassa.edulliset, 0)
       
