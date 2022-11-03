@@ -1,0 +1,20 @@
+title Tehtävä 4
+
+main->HKLLaitehallinto: HKLLaitehallinto(laitehallinto)
+main->Lataajalaite: Lataajalaite(rautatientori)
+main->Lukijalaite: Lukijalaite(ratikka6)
+main->Lukijalaite: Lukijalaite(bussi244)
+main->HKLLaitehallinto: laitehallinto.lisaa_lataaja(rautatientori)
+main->HKLLaitehallinto: laitehallinto.lisaa_lukijalaite(ratikka6)
+main->HKLLaitehallinto: laitehallinto.lisaa_lukija(bussi244)
+main->Kioski: Kioski(lippu_luukku)
+main->Kioski: osta_matkakortti("Kalle")
+Kioski->Matkakortti: Matkakortti("Kalle")
+main->Lataajalaite: lataa_arvoa(kallen_kortti, 3)
+Lataajalaite->Matkakortti: kasvata_arvoa(3)
+main->Lukijalaite: osta_lippu(kallen_kortti, 0)
+Lukijalaite->Matkakortti: vahenna_arvoa(0)
+main->Lukijalaite: osta_lippu(kallen_kortti, 2)
+Lukijalaite->Matkakortti: vahenna_arvoa(2)
+
+https://www.websequencediagrams.com
