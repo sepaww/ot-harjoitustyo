@@ -1,0 +1,8 @@
+Machine->FuelTank: FuelTank(self.tank)
+Machine->FuelTank: tank.fill(40)
+Machine->Engine: Engine(self._tank)
+Machine->Engine: start(self._engine)
+Engine->FuelTank: self._fuel_tank.consume(5)
+Machine->Engine: is_running()
+Machine->Engine: use._energy()
+Engine->FuelTank: self._fuel_tank.consume(10)
