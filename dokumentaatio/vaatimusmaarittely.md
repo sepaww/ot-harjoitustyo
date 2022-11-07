@@ -1,13 +1,13 @@
-#Vaatimusmäärittely
+# Vaatimusmäärittely
 
-##Sovelluksen tarkoitus
+## Sovelluksen tarkoitus
 
 Sovellus pyörittää leikkimielistä sijoituspeliä, jossa pelaajan tavoitteena on selvitä alati nousevasta vuokrasta
 sijoittamalla järkevästi annettuihin osakkeisin. Pelaajalle jaetaan osakkeista tarvittavat tiedot,
 kuten hinta, nousu- tai laskusuhdanne ja osakehistoria, joiden avulla tämä voi tehdä optimaalisia investointeja. Pelin kulku seuraa
 roguelite tyyliä riskin ja palkkion periaattein. Pelaajan on oltava valmis ottamaan riskejä, mutta liiallinen riski tuo konkurssin
 
-##Pelaaja
+## Pelaaja
 Pelaaja tullee toimimaan anonyyminä henkilönä (jollei hahmovalikoimaa lisätä peliin)\
 Jos hahmovalikoima lisätään, voi jokaisella hahmolla olla eriävä 
 tulo sekä meno määrä tai jokin sijoitusta auttava ns. perkki.
@@ -24,10 +24,10 @@ Peli koostuu 6 eri näkymästä:
 ##Perusversion tarjoama toiminnallisuus
 
 
-###Aloitusruutu
+### Aloitusruutu
 -Käyttäjä voi painaa hiirellä nappia aloittaakseen pelin
 
-###Pelinaloituksen_jälkeen
+### Pelinaloituksen_jälkeen
 
 -Pelaaja siirtyy pelinäkymään
  - Pelinäkymä koostuu sijoitus/ostos vaiheesta, jonka jälkeen päivä vaihtuu ja pelissä siirrytään tulosruutuun,
@@ -35,9 +35,9 @@ Peli koostuu 6 eri näkymästä:
  -Pelinäkymässä pelaaja voi myös tarkastella osakkeiden historiaa
  -Jos pelaajan rahat eivät riitä menoihin siirrytään gameover näkymään, josta pelaaja voi tarkastella ennätyslistaa
  
- ##Jatkokehitysideoita
+ ## Jatkokehitysideoita
  
- Jos aika sallii perusversioon lisätään pelinkulkua monipuolistavilla ominaisuuksilla
+ Jos aika sallii perusversioon lisätään pelinkulkua monipuolistavilla ominaisuuksilla:
  -Hahmovalikoima, joka toisi peliin lisää uudelleen pelaus arvoa
  -Lisää tuotteita kauppaan
  -Osakkeen ominaisuudet, esim. osake voi kuulua luokkaa tech, jolloin sillä on suurempi todennäköisyys tehdä
