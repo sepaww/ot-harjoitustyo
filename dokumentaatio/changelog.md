@@ -34,3 +34,4 @@
 - Lisätty koodia testaavat testit ja niiden kattaavuus 89%
 - paranneltu osakkeiden koodia (vähemmän copypastea)
 - ohjelman koodi luokiteltu omiin osiinsa ja niitä vastaaviin foldereihin (vähemmän koodia yhdellä tiedostolla jolloin toivottavasti selkeämpää)
+- changelog ja tuntikirjanpito erillisiksi
