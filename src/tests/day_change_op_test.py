@@ -3,19 +3,20 @@ import unittest
 import finance.Finance as F
 import stocks.stockcreator as st_cr
 import day_change_op.day_change_operator as op
+
+class Ownedstocks():
+    def __init__(self):
+        self.owned=[0]*10
+    
+class Timer():
+    def __init__(self):     
+        self.day=1
 class Test_DOP(unittest.TestCase):
-    class Ownedstocks():
-        def __init__(self):
-            self.owned=[0]*10
-        
-    class Timer():
-        def __init__(self):     
-            self.day=1
-        
+    
     def setUp(self):
-        self.time=self.Timer
+        self.time=Timer()
         self.time.day=4
-        self.owned=self.Ownedstocks
+        self.owned=Ownedstocks()
         self.finance=F.Finance(100, 60, 50)
         self.stocks=st_cr.create_stocks()
     def test_finance_update(self):
@@ -41,7 +42,5 @@ class Test_DOP(unittest.TestCase):
         for i in range(len(curstock)):
             if self.owned.owned[i]>0:
                 sumofmoney+=curstock[i][1]*self.owned.owned[i]
-        sumofmoney+=self.finance.money
-        self.assertEqual(summ, sumofmoney)
         sumofmoney+=self.finance.money
         self.assertEqual(summ, sumofmoney)
