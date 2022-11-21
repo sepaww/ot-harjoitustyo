@@ -3,7 +3,7 @@
 - pygame käyntiin projektina. Syntaksin ja toimintojen muistelua sekä pelin koodin rakenteen suunnittelua.
 - etenemistä aloitusruutu toimintaan sekä pörssi saadan nyt blitattua ruudulle pelinäkymään.
 - seuraavaksi ostamistoiminnot sekä raha tulot ja menot ja niihin liittyvä koodi.
-- noin 7h
+
 
 # ti 8.11.2022
 - kauppa toimintaan ja sinne tulevat asiat, ei vielä ruudulle kuitenkaan.
