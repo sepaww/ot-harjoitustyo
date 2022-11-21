@@ -14,7 +14,7 @@ class Test_Stock_history(unittest.TestCase):
         self.assertEqual(len(temp), 4)
         self.assertEqual(temp[0], self.startstock[0])
         self.assertEqual(type(temp[1]), int)
-        self.assertEqual(type(temp[2]), float)
+        self.assertEqual(type(temp[2]), int)
         self.assertEqual(type(temp[3]), int)
         if temp[1]>self.startstock[1]:
             self.assertGreater(temp[3], 0)
