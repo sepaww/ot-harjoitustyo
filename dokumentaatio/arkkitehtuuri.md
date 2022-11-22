@@ -58,3 +58,48 @@ Peli on jaoteltu useisiin kansioihin niiden tyypin perusteella. Ohjelmaa pyörit
       
       
 ```
+## Päätoiminnallisuus
+Kuvataan pelin toimintaa kolmella sekvenssi kaaviolla.
+Pelin käynnistystä sekä alustamista kuvaa seuraava sekvenssi kaavio
+```mermaid
+sequenceDiagram
+  actor User
+  participant Main
+  participant Finance
+  participant items
+  participant stockcreator
+  participant stockhistory
+  User->>Main: Player starts the program
+  Main->>Main: starting_screen()
+  User->>Main: Player clicks start
+  Main->>Main: initialize()
+  Main->>stockcreator: create_stocks()
+  stockcreator->>stockhistory: create_history(stocks)
+  Main->>Finance:Finance(player_eco)
+  Main->>items: itemgiver()
+  Main->>Main: Ownedstocks()
+  Main->>Main: Timer()
+  Main->>Main: run([stocks, money, owned, switch, itemlist, dayswitch, time])
+  #Game starts running in mainloop and player ends up losing
+  Main->>Main: return from run back to starting_screen
+  Main->>Main: ending_screen()
+  Main->>Main: starting_screen()
+```
+Pelin pelinäkymää kuvaava sekvenssi kaavio
+
+```mermaid
+sequenceDiagram
+  actor User
+  participant UI
+  participant TodoService
+  participant UserRepository
+  User->>UI: click "Login" button
+  UI->>TodoService: login("kalle", "kalle123")
+  TodoService->>UserRepository: find_by_username("kalle")
+  UserRepository-->>TodoService: user
+  TodoService-->>UI: user
+  UI->UI: show_todos_view()
+```
+
+Pelin päivän vaihto
+
