@@ -123,6 +123,7 @@ seuraavaksi tapahtuu pelin sisäisen päivän vaihto ja siihen liittyvät toimen
   ```mermaid
 sequenceDiagram
   actor User
+  participant inputs
   participant Main
   participant daychange
   participant day_change_operator
@@ -130,7 +131,6 @@ sequenceDiagram
   participant items
   participant stockhistory
   participant draw_screen
-  participant inputs
   Main->>daychange: daychange(stocks, wholefinance, owned, timer)
   daychange->>items: itemgiver()
   daychange->>stockhistory: stock_update(stocks)
