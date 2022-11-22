@@ -60,7 +60,8 @@ Peli on jaoteltu useisiin kansioihin niiden tyypin perusteella. Ohjelmaa pyörit
 ```
 ## Päätoiminnallisuus
 Kuvataan pelin toimintaa kolmella sekvenssi kaaviolla.
-Pelin käynnistystä sekä alustamista kuvaa seuraava sekvenssi kaavio
+
+### Pelin käynnistystä sekä alustamista kuvaa seuraava sekvenssi kaavio
 ```mermaid
 sequenceDiagram
   actor User
@@ -85,27 +86,61 @@ sequenceDiagram
   Main->>Main: ending_screen()
   Main->>Main: starting_screen()
 ```
-Pelin pelinäkymää kuvaava sekvenssi kaavio
+### Pelin pelinäkymää kuvaava sekvenssi kaavio
 
+Tapahtumat pyörivät main.py tiedoston funktion run loopin sisällä nopeudella 10 tick/second.
+Pelin peliloopin aikana ei juurikaan tapahdu muita pelilogiikan kannalta oleellisia asioita kuin rahatilanteen ylläpito ja omistettujen osakkeiden määrät sekä ostettujen asioiden aiheuttamien muutosten asettaminen voimaan. Suurin osa komennoista koostuu pelaajan syötteen lukemisesta sekä käyttöliittymän päivittämisestä niiden perusteella. kaikki kommunikointi käyttäjän ja ohjelman välillä tapahtuu helpomman käyttäjäkokemuksen luomiseksi.
 
   ```mermaid
 sequenceDiagram
   actor User
   participant Main
-  participant Finance
+  participant effects
   participant items
-  participant stockcreator
-  participant stockhistory
+  participant draw_screen
+  participant inputs
+  participant (tools)
+  Main->>draw_screen: drawinfo(wholefinance, timedifference, timer, screen)
+  Main->>inputs: inputters(owned, stocks, wholefinance, shopswitch, dayswitch)
+  Main->>draw_screen: drawstocks(stocks, screen)
+  Main->>draw_screen: drawowned(owned, screen)
+  draw_screen->>(tools): certain unique pygame commands are used to draw needed elements on screen
+  User->>inputs: Player leftclicks on a stock, finance.money-stock.price
+  User->>inputs: Player rightclicks on a stock, finance.money+stock.price
+  User->>inputs: Player leftclicks on market-> shopswitch.take=True
+  Main->>draw_screen: blank() (cleans the screen to evade drawn objects overlapping
+  Main->>inputs: inputterm(shopswitch, itemlist, wholefinance, dayswitch)
+  Main->>draw_screen: drawshop(itemlist, screen)
+  User->>inputs: User leftclicks on an item
+  inputs->>effects: apply_effect(effects, financeinfo)
+  User->>inputs: User clicks on end to end the current day -> dayswitch.take=True
+  Main->>draw_screen: wholeblank(screen)
 ```
+seuraavaksi tapahtuu pelin sisäisen päivän vaihto ja siihen liittyvät toimenpiteet. Jos pelaajan käteisvarat eivät kuitenkaan riitä menoihin, peli siirtyy päivänvaihdon sijaan lopetusruutuun.
 
-Pelin päivän vaihto
+### Pelin päivän vaihto
 
   ```mermaid
 sequenceDiagram
   actor User
   participant Main
+  participant daychange
+  participant day_change_operator
   participant Finance
   participant items
-  participant stockcreator
   participant stockhistory
+  participant draw_screen
+  participant inputs
+  Main->>daychange: daychange(stocks, wholefinance, owned, timer)
+  daychange->>items: itemgiver()
+  daychange->>stockhistory: stock_update(stocks)
+  stockhistory->>stockhistory: stock_operator(stock)
+  daychange->>day_change_operator: finance_update(finance, timer)
+  daychange->>day_change_operator: summary(stocks, finance, owned)
+  daychange->>Main: return summary, itemlist and stocks
+  Main->>daychange: summary_driver(screen, summary, wholefinance, summaryloop)
+  daychange->>draw_screen: draw_summary(screen, summary, finance)
+  daychange->>inputs: summaryinput(summaryloop)
+  User->>inputs: Player clicks on "okey" button and a new day begins and timer resets
+  Main->>draw_screen: wholeblank() clears whole screen
 ```
