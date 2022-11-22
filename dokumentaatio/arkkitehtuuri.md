@@ -14,9 +14,9 @@ Peli on jaoteltu useisiin kansioihin niiden tyypin perusteella. Ohjelmaa pyörit
  Peli koostuu kolmesta eri päänäkymästä:
  - aloitusruutu
  - peliruutu
-  - osake-finanssi näkymä
-  - kauppa-finanssi näkymä
- - tiiviste ruutu, jossa pelin sisäisten päivien vaihtuessa kerrotaan pelaajalle tämän nettoarvo, eli onko osakkeista tullut voittoa
+    - osake-finanssi näkymä
+    - kauppa-finanssi näkymä
+    - tiiviste ruutu, jossa pelin sisäisten päivien vaihtuessa kerrotaan pelaajalle tämän nettoarvo, eli onko osakkeista tullut voittoa
  - loppuruutu, jossa selvittyjen päivien määrä sekä ennätystaulu
  
  ## Sovelluslogiikka
