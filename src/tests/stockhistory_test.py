@@ -1,6 +1,6 @@
 import unittest
-import stocks.stockhistory as st_hs
-import stocks.stockcreator as st_cr
+import finance.stockhistory as st_hs
+import finance.stockcreator as st_cr
 import random as r
 class Test_Stock_history(unittest.TestCase):
     def setUp(self):

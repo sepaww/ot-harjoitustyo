@@ -1,9 +1,9 @@
 import screen.draw_screen as draw_screen
 import pygame
-import stocks.stockhistory as st_hs
+import finance.stockhistory as st_hs
 import day_change_op.day_change_operator as dop
 import inputs.inputs as inputs
-import shop.items as items
+import finance.items as items
 pygame.init
 def daychange(stocks, finance, owned, timer):
     itemlist=items.itemgiver()

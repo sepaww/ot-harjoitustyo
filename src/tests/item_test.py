@@ -1,5 +1,5 @@
 import unittest
-import shop.items as it
+import finance.items as it
 class Test_Stock_history(unittest.TestCase):
     def setUp(self):
         self.imaginary_item=["Head", "Desc", "stat_Desc", [("money", 0)], 1]

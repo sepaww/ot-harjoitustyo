@@ -7,3 +7,7 @@ def draw_highlight(screen, fill_color, non_hover_color, hover_color, width, heig
         pygame.draw.rect(screen,hover_color,[width-1,height-1,xsize+2,ysize+2], 5, 3)  
     else:
         pygame.draw.rect(screen,non_hover_color,[width-1,height-1,xsize+2,ysize+2], 5, 3)
+        
+def draw_nonhighlight(screen, fill_color, non_hover_color, hover_color, width, height, xsize, ysize):
+    pygame.draw.rect(screen,fill_color,[width,height,xsize,ysize])
+    pygame.draw.rect(screen,non_hover_color,[width-1,height-1,xsize+2,ysize+2], 5, 3)

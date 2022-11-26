@@ -1,5 +1,5 @@
 import unittest
-import stocks.stockcreator as st_cr
+import finance.stockcreator as st_cr
 
 class Test_Stock_creator(unittest.TestCase):
     def setUp(self):

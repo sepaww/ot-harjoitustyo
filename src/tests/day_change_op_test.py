@@ -1,7 +1,7 @@
 import unittest
 
 import finance.Finance as F
-import stocks.stockcreator as st_cr
+import finance.stockcreator as st_cr
 import day_change_op.day_change_operator as op
 
 class Ownedstocks():
