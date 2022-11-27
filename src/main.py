@@ -182,14 +182,13 @@ def starting_screen():
     """
     loop = True
     while loop:
-        Startmouse = pygame.mouse.get_pos()
+        startmouse = pygame.mouse.get_pos()
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
                 sys.exit()
             if event.type == pygame.MOUSEBUTTONDOWN:
-                if Stat.screen_width/2-100 <= Startmouse[0] <= Stat.screen_width/2+90 and
-                Stat.screen_height/2-40 <= Startmouse[1] <= Stat.screen_height/2+40:
+                if Stat.screen_width/2-100 <= startmouse[0] <= Stat.screen_width/2+90 and Stat.screen_height/2-40 <= startmouse[1] <= Stat.screen_height/2+40:
                     days = initialize()
                     ending_screen(days)
         screen.fill((Stat.default_color))
