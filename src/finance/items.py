@@ -50,18 +50,19 @@ itempool = [
         "none", [("money", 0)], 1]
 ]
 
-
 def itemgiver():
     """a funtion for giving daily items 
-
     Returns:
         list: list of item objects
     """
     length = len(itempool)-1
-    i1 = itempool[r(0, length)]
-    i2 = itempool[r(0, length)]
-    i3 = itempool[r(0, length)]
-    item1 = Item(i1[0], i1[1], i1[2], i1[3], i1[4])
-    item2 = Item(i2[0], i2[1], i2[2], i2[3], i2[4])
-    item3 = Item(i3[0], i3[1], i3[2], i3[3], i3[4])
+    Itemcomp1 = itempool[r(0, length)]
+    Itemcomp2 = itempool[r(0, length)]
+    Itemcomp3 = itempool[r(0, length)]
+    item1 = Item(Itemcomp1[0], Itemcomp1[1],
+                 Itemcomp1[2], Itemcomp1[3], Itemcomp1[4])
+    item2 = Item(Itemcomp2[0], Itemcomp2[1],
+                 Itemcomp2[2], Itemcomp2[3], Itemcomp2[4])
+    item3 = Item(Itemcomp3[0], Itemcomp3[1],
+                 Itemcomp3[2], Itemcomp3[3], Itemcomp3[4])
     return [item1, item2, item3]
