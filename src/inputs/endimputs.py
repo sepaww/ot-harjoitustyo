@@ -5,12 +5,10 @@ pygame.init()
 
 def nameinputs(database, namebool, cursorposition):
     """inputs for name giving screen
-
     Args:
         database (database object): 
         namebool (bool): bool to break out of callers loop
         cursorposition (int): index of players writing cursor
-
     Returns:
         tuple: [0] to break out of callers loop and [1] to retrun updated cursor position
     """
@@ -29,7 +27,7 @@ def nameinputs(database, namebool, cursorposition):
                     else:
                         database.scorelist[database.ind][0] = database.scorelist[database.ind][0][:cursorposition -
                                                                                                   1] + "_" + database.scorelist[database.ind][0][cursorposition:]
-
+                        
                     cursorposition -= 1
             else:
 
