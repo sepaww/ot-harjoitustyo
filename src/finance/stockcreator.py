@@ -28,6 +28,6 @@ def create_stocks():
         namel -= 1
         stock = [name, int(startprice), variance, 0,]
         stocks.append(stock)
-    # print(stocks)
+    
     stocks = [stocks]
     return hist.create_history(stocks)
