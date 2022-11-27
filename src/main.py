@@ -173,10 +173,10 @@ def ending_screen(days):
 
 
 def starting_screen():
-    """The function that is reponsible of running the 
+    """The function that is reponsible of running the
     starting screen and calling for initialize()
     when player starts the game.
-    Also responsible of calling 
+    Also responsible of calling
     for ending_screen after player cant pay for expenses
     """
     loop = True
@@ -187,7 +187,8 @@ def starting_screen():
                 pygame.quit()
                 sys.exit()
             if event.type == pygame.MOUSEBUTTONDOWN:
-                if Stat.screen_width/2-100 <= mouse[0] <= Stat.screen_width/2+90 and Stat.screen_height/2-40 <= mouse[1] <= Stat.screen_height/2+40:
+                if Stat.screen_width/2-100 <= mouse[0] <= Stat.screen_width/2+90 and
+                Stat.screen_height/2-40 <= mouse[1] <= Stat.screen_height/2+40:
                     days = initialize()
                     ending_screen(days)
         screen.fill((Stat.default_color))
