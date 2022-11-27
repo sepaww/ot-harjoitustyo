@@ -18,7 +18,7 @@ def summary(stocks, finance, owned):
         if owned.owned[i] > 0:
             sumofmoney += curstock[i][1]*owned.owned[i]
     sumofmoney += finance.money
-    
+
     return sumofmoney
 
 

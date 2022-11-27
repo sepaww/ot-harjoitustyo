@@ -18,6 +18,6 @@ def need_new_name(days, datab):
     for l in range(i, len(datab.scorelist)-1):
         copyl.append(datab.scorelist[l])
     datab.scorelist = copyl.copy()
-    
+
     datab.ind = i
     return True

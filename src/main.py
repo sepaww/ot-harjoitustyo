@@ -22,7 +22,7 @@ from ending_screen_op import endinginit as endinit
 from ending_screen_op import database_op as data_op
 from tools.stats import Stats
 pygame.init()
-Stat=Stats()
+Stat = Stats()
 pygame.display.set_caption(Stat.name)
 
 
@@ -37,6 +37,7 @@ mouse = pygame.mouse.get_pos()
 class Ownedstocks():
     """a list with the purpose of tracking the indexes of owned stocks in the stocklist and their amount
     """
+
     def __init__(self):
         self.owned = [0]*10
 
@@ -44,6 +45,7 @@ class Ownedstocks():
 class Switch():
     """Gereral purpose global boolian
     """
+
     def __init__(self):
         self.take = False
 
@@ -51,11 +53,10 @@ class Switch():
 class Timer():
     """Timer object for time limit tracking and day highscore tracking
     """
+
     def __init__(self):
         self.start_time = pygame.time.get_ticks()
         self.day = 1
-
-
 
 
 def run(listofthings):
@@ -180,7 +181,8 @@ def starting_screen():
                     ending_screen(days)
         screen.fill((Stat.default_color))
         mouse = pygame.mouse.get_pos()
-        draw_hl.draw_highlight(screen, Stat.screen_width/2-100, Stat.screen_height/2-40, 190, 80)
+        draw_hl.draw_highlight(screen, Stat.screen_width /
+                               2-100, Stat.screen_height/2-40, 190, 80)
         draw_no.draw_txt(Stat.startfont, "start", "white", screen,
                          Stat.screen_width/2-75, Stat.screen_height/2-50)
         pygame.display.update()

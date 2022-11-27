@@ -1,17 +1,17 @@
+import sys
 import tools.draw_higlight as draw_hl
 import tools.draw_normal as draw_no
 import pygame
 from tools.stats import Stats
-Stat=Stats()
-import sys
+Stat = Stats()
 pygame.init()
-
 
 
 def draw_summary(screen, summary, finance):
     pygame.draw.rect(screen, Stat.midlight_default_color, [
                      Stat.screen_width/2-250, Stat.screen_height/2-250, 500, 500])
-    draw_hl.draw_highlight(screen, Stat.screen_width/2-100, Stat.screen_height/2+30, 190, 100)
+    draw_hl.draw_highlight(screen, Stat.screen_width /
+                           2-100, Stat.screen_height/2+30, 190, 100)
     draw_no.draw_txt(Stat.infofont, "Net  Worth:", "white", screen,
                      Stat.screen_width/2-200, Stat.screen_height/2-200)
     draw_no.draw_txt(Stat.startfont, "okey", "white", screen,
@@ -30,7 +30,8 @@ def draw_summary(screen, summary, finance):
 
 def drawinfo(m, timedifference, timer, screen):
     pygame.draw.rect(screen, Stat.midlight_default_color, [20, 20, 300, 200])
-    pygame.draw.rect(screen, Stat.darker_default_color, [20, 20, 300, 200], 5, 3)
+    pygame.draw.rect(screen, Stat.darker_default_color,
+                     [20, 20, 300, 200], 5, 3)
     moneysentence = Stat.infofont.render("Money: ", True, "white")
     if m.money >= m.exp:
         money = Stat.infofont.render(str(m.money), True, "white")
@@ -48,7 +49,8 @@ def drawinfo(m, timedifference, timer, screen):
     screen.blit(income, (230, 140))
     timedifference = 30-timedifference/1000
     draw_hl.draw_highlight(screen, Stat.screen_width/2-155, 160, 100, 50)
-    draw_no.draw_txt(Stat.infofont, "END", "white", screen, Stat.screen_width/2-140, 165)
+    draw_no.draw_txt(Stat.infofont, "END", "white",
+                     screen, Stat.screen_width/2-140, 165)
     pygame.draw.rect(screen, Stat.midlight_default_color, [
                      Stat.screen_width/2-130, 100, 50, 40])
     draw_no.draw_txt(Stat.infofont, str(round(timedifference)),
@@ -60,7 +62,8 @@ def drawinfo(m, timedifference, timer, screen):
 
 
 def blank(screen):
-    pygame.draw.rect(screen, Stat.default_color, [Stat.screen_width/2-50, 0, 800, 800])
+    pygame.draw.rect(screen, Stat.default_color, [
+                     Stat.screen_width/2-50, 0, 800, 800])
 
 
 def wholeblank(screen):
@@ -81,7 +84,8 @@ def drawowned(o, screen):
         else:
             screen.blit(amount, (Stat.screen_width/2-35, startheight+15))
         startheight += 65
-    draw_hl.draw_highlight(screen, Stat.screen_width/2+50, startheight+8, 400, 88)
+    draw_hl.draw_highlight(screen, Stat.screen_width /
+                           2+50, startheight+8, 400, 88)
     shoptxt = Stat.startfont.render("market", True, "white")
     screen.blit(shoptxt, (Stat.screen_width/2+140, startheight+10))
 
@@ -113,7 +117,8 @@ def drawstocks(stocks, screen):
     day_stocks = stocks[len(stocks)-1]
     startheight = 10
     for stock in day_stocks:
-        draw_hl.draw_highlight(screen, Stat.screen_width/2+10, startheight+8, 450, 45)
+        draw_hl.draw_highlight(screen, Stat.screen_width /
+                               2+10, startheight+8, 450, 45)
         if stock[3] > 0:
             risecolor = "green"
         else:

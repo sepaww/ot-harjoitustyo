@@ -1,6 +1,7 @@
 import pygame
 from tools.stats import Stats
-Stat=Stats()
+Stat = Stats()
+
 
 def draw_txt(font, text, color, screen, posx, posy):
     txt = font.render(text, True, color)

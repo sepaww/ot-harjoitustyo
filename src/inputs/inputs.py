@@ -4,6 +4,8 @@ import pygame
 pygame.init()
 screen_width = 64*15
 screen_height = 64*12
+
+
 def quitevent(event):
     """a function to remove copypaste from other funtions. handles pygame.quit() call
 
@@ -11,8 +13,9 @@ def quitevent(event):
         event (pygame.event)
     """
     if event.type == pygame.QUIT:
-            pygame.quit()
-            sys.exit()
+        pygame.quit()
+        sys.exit()
+
 
 def summaryinput(summaryloop):
     """input for summary screen
@@ -70,11 +73,10 @@ def inputters(ol, stocks, money, switch, dayswitch):
                         money.money += price
                         ol.owned[id] -= 1
             if screen_width/2+50 <= mouse[0] <= screen_width/2+450 and startheight+8 <= mouse[1] <= startheight+88:
-                
+
                 switch.take = True
             elif screen_width/2-155 <= mouse[0] <= screen_width/2-55 and 160 <= mouse[1] <= 210:
                 dayswitch.take = True
-            
 
 
 def inputterm(switch, itemlist, wholefinance, dayswitch):
@@ -91,7 +93,7 @@ def inputterm(switch, itemlist, wholefinance, dayswitch):
         quitevent(event)
         if event.type == pygame.MOUSEBUTTONDOWN:
             if screen_width/2+50 <= mouse[0] <= screen_width/2+450 and 660+8 <= mouse[1] <= 660+88:
-                
+
                 switch.take = False
             elif screen_width/2+10 <= mouse[0] <= screen_width/2+450 and 50 <= mouse[1] <= 225 and itemlist[0].sold == False:
                 if wholefinance.money >= itemlist[0].price:

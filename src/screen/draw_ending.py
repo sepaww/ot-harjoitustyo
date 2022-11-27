@@ -1,16 +1,17 @@
+from tools.stats import Stats
 import tools.draw_higlight as dr_hl
 import tools.draw_normal as dr_no
 import screen.draw_screen as dr_sc
 import pygame
 pygame.init()
-from tools.stats import Stats
-Stat=Stats()
+Stat = Stats()
 
 
 def draw_highscorelist(database, screen):
     height = 50
     for i in range(len(database.scorelist)):
-        dr_hl.draw_nonhighlight(screen, Stat.screen_width/2+100, height, 300, 50)
+        dr_hl.draw_nonhighlight(
+            screen, Stat.screen_width/2+100, height, 300, 50)
         dr_no.draw_txt(
             Stat.infofont, database.scorelist[i][0], "white", screen, Stat.screen_width/2+150, height+5)
         dr_no.draw_txt(Stat.infofont, str(
@@ -38,8 +39,10 @@ def draw_name_need(database, screen):
 def draw_hs(database, screen):
     dr_sc.wholeblank(screen)
     draw_highscorelist(database, screen)
-    dr_hl.draw_highlight(screen, Stat.screen_width/2-400, Stat.screen_height/2-300, 300, 200)
-    dr_hl.draw_highlight(screen, Stat.screen_width/2-400, Stat.screen_height/2, 300, 200)
+    dr_hl.draw_highlight(screen, Stat.screen_width/2-400,
+                         Stat.screen_height/2-300, 300, 200)
+    dr_hl.draw_highlight(screen, Stat.screen_width/2-400,
+                         Stat.screen_height/2, 300, 200)
     dr_no.draw_txt(Stat.startfont, "play again", "white", screen,
                    Stat.screen_width/2-380, Stat.screen_height/2-250)
     dr_no.draw_txt(Stat.startfont, "quit", "white", screen,

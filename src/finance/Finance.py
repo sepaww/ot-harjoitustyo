@@ -1,6 +1,7 @@
 class Finance():
     """Players finance info
     """
+
     def __init__(self, amount, income, expense):
         """initiator
 

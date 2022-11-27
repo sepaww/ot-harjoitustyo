@@ -4,6 +4,7 @@ import sqlite3
 class Databaseop:
     """Class for operating the highscore database
     """
+
     def __init__(self):
         """initiator
         """
@@ -50,7 +51,7 @@ class Databaseop:
         cur.execute(text)
 
         if cur.fetchone()[0] != 1:
-            
+
             self.db.execute("CREATE TABLE hs (name varchar(255), days int)")
             for i in range(10):
                 self.db.execute(
@@ -66,4 +67,3 @@ class Databaseop:
         self.names = [i[0] for i in self.names]
         self.scorelist = [(self.names[i], self.days[i])
                           for i in range(len(self.days))]
-        

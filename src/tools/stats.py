@@ -1,6 +1,7 @@
 class Stats():
     """class for stats used in game's code.
     """
+
     def __init__(self):
         """initiator
         """
@@ -17,5 +18,5 @@ class Stats():
         self.lighter_default_color = "#2d424a"
         self.darker_default_color = "#131b1f"
         self.midlight_default_color = "#203036"
-        
-        self.name="pörssipeli"
+
+        self.name = "pörssipeli"
