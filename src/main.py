@@ -1,23 +1,24 @@
-import pygame
 import sys
-from finance import stockcreator as stcr
+import pygame
 
-from day_change_op import daychange as daychange
+from finance import stockcreator as stcr
+from finance import Finance
+from finance import items
+
+
+from day_change_op import daychange
 
 from tools import draw_higlight as draw_hl
 from tools import draw_normal as draw_no
 
-from finance import items as items
-from finance import effects as effects
-
-from screen import draw_screen as draw_screen
+from screen import draw_screen
 from screen import draw_ending as draw_en
 
 
-from inputs import inputs as inputs
-from inputs import endimputs as endinputs
+from inputs import inputs
+from inputs import endimputs
 
-from finance import Finance as Finance
+
 from ending_screen_op import endinginit as endinit
 from ending_screen_op import database_op as data_op
 from tools.stats import Stats
@@ -35,7 +36,8 @@ mouse = pygame.mouse.get_pos()
 
 
 class Ownedstocks():
-    """a list with the purpose of tracking the indexes of owned stocks in the stocklist and their amount
+    """a list with the purpose of tracking the indexes of
+    owned stocks in the stocklist and their amount
     """
 
     def __init__(self):
@@ -60,8 +62,10 @@ class Timer():
 
 
 def run(listofthings):
-    """Main loop. takes value from initialize and calls for gamelogic functions and pygame inputs and draw_screens.
-    Also operates day change operator. after done looping will return back to starting_screen function
+    """Main loop. takes value from initialize and calls for
+    gamelogic functions and pygame inputs and draw_screens.
+    Also operates day change operator. after done
+    looping will return back to starting_screen function
 
     Args:
         listofthings (list): includes all required objects from initialize to run the game
@@ -69,15 +73,15 @@ def run(listofthings):
     Returns:
         days: the amount of days player survived
     """
-    l = listofthings
-    stocks = l[0]
-    wholefinance = l[1]
+    lot = listofthings
+    stocks = lot[0]
+    wholefinance = lot[1]
 
-    owned = l[2]
-    shopswitch = l[3]
-    itemlist = l[4]
-    dayswitch = l[5]
-    timer = l[6]
+    owned = lot[2]
+    shopswitch = lot[3]
+    itemlist = lot[4]
+    dayswitch = lot[5]
+    timer = lot[6]
     screen.fill((Stat.default_color))
     loop = True
     # MAIN LOOP
@@ -125,7 +129,8 @@ def run(listofthings):
 
 
 def initialize():
-    """A function for calling all the setup function for the game to start and settting up all objects used to run the game
+    """A function for calling all the setup function for the
+    game to start and settting up all objects used to run the game
 
     Returns:
         days: the amount of days the player lasted.
@@ -142,8 +147,10 @@ def initialize():
 
 
 def ending_screen(days):
-    """The function that runs everything that happens after the player cant pay the daily expenses.
-    Is responsible for calling database related functions and calling ending screen related pygame functions
+    """The function that runs everything that happens
+    after the player cant pay the daily expenses.
+    Is responsible for calling database related functions
+    and calling ending screen related pygame functions
 
     Args:
         days (int): the "highscore" of player
@@ -166,11 +173,15 @@ def ending_screen(days):
 
 
 def starting_screen():
-    """The function that is reponsible of running the starting screen and calling for initialize() when player starts the game.
-    Also responsible of calling for ending_screen after player cant pay for expenses
+    """The function that is reponsible of running the 
+    starting screen and calling for initialize()
+    when player starts the game.
+    Also responsible of calling 
+    for ending_screen after player cant pay for expenses
     """
     loop = True
     while loop:
+        mouse = pygame.mouse.get_pos()
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
@@ -180,7 +191,7 @@ def starting_screen():
                     days = initialize()
                     ending_screen(days)
         screen.fill((Stat.default_color))
-        mouse = pygame.mouse.get_pos()
+        
         draw_hl.draw_highlight(screen, Stat.screen_width /
                                2-100, Stat.screen_height/2-40, 190, 80)
         draw_no.draw_txt(Stat.startfont, "start", "white", screen,
