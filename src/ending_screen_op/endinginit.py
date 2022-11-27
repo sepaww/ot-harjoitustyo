@@ -12,7 +12,7 @@ def need_new_name(days, datab):
     """
     if datab.scorelist[-1][1] > days:
         return False
-    length=len(datab.scorelist)
+    length = len(datab.scorelist)
     for i in range(length):
         if datab.scorelist[i][1] < days:
             break

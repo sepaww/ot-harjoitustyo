@@ -14,7 +14,7 @@ class Databaseop:
         self.days = 0
         self.exist()
         self.geths()
-        self.ind=-1
+        self.ind = -1
 
     def cleartable(self):
         """clears the database of highscore table before updating it

@@ -50,6 +50,7 @@ itempool = [
         "none", [("money", 0)], 1]
 ]
 
+
 def itemgiver():
     """a funtion for giving daily items
     Returns:

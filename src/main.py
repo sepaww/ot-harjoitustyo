@@ -193,7 +193,7 @@ def starting_screen():
                     days = initialize()
                     ending_screen(days)
         screen.fill((Stat.default_color))
-        
+
         draw_hl.draw_highlight(screen, Stat.screen_width /
                                2-100, Stat.screen_height/2-40, 190, 80)
         draw_no.draw_txt(Stat.startfont, "start", "white", screen,

@@ -29,7 +29,7 @@ def finance_update(finance, timer):
         current day, which is used to determine the
         raise of expenses
     """
-    explist=[10,10,20,20,30,30,40,40]
+    explist = [10, 10, 20, 20, 30, 30, 40, 40]
     finance.money -= finance.exp
     finance.money += finance.inc
     if timer.day > len(explist)-1:

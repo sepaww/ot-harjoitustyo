@@ -7,8 +7,6 @@ from day_change_op import day_change_operator as dop
 from inputs import inputs
 
 
-
-
 def daychange(stocks, finance, owned, timer):
     """handles the actions related to changing the ingame day
         also initializes updates to required ingame objects

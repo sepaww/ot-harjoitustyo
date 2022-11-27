@@ -27,7 +27,7 @@ def nameinputs(database, namebool, cursorposition):
                     else:
                         database.scorelist[database.ind][0] = database.scorelist[database.ind][0][:cursorposition -
                                                                                                   1] + "_" + database.scorelist[database.ind][0][cursorposition:]
-                        
+
                     cursorposition -= 1
             else:
 
