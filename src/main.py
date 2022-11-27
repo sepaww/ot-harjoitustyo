@@ -10,18 +10,19 @@ from day_change_op import daychange
 
 from tools import draw_higlight as draw_hl
 from tools import draw_normal as draw_no
+from tools.stats import Stats
 
 from screen import draw_screen
 from screen import draw_ending as draw_en
 
 
 from inputs import inputs
-from inputs import endimputs
+from inputs import endinputs
 
 
 from ending_screen_op import endinginit as endinit
 from ending_screen_op import database_op as data_op
-from tools.stats import Stats
+
 pygame.init()
 Stat = Stats()
 pygame.display.set_caption(Stat.name)
@@ -181,14 +182,14 @@ def starting_screen():
     """
     loop = True
     while loop:
-        mouse = pygame.mouse.get_pos()
+        Startmouse = pygame.mouse.get_pos()
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
                 sys.exit()
             if event.type == pygame.MOUSEBUTTONDOWN:
-                if Stat.screen_width/2-100 <= mouse[0] <= Stat.screen_width/2+90 and
-                Stat.screen_height/2-40 <= mouse[1] <= Stat.screen_height/2+40:
+                if Stat.screen_width/2-100 <= Startmouse[0] <= Stat.screen_width/2+90 and
+                Stat.screen_height/2-40 <= Startmouse[1] <= Stat.screen_height/2+40:
                     days = initialize()
                     ending_screen(days)
         screen.fill((Stat.default_color))
