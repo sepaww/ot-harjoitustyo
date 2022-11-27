@@ -1,6 +1,5 @@
 def summary(stocks, finance, owned):
     """a function to count the networth of player
-
     Args:
         stocks (matrix): a matrix with each days stocks
         finance (Finance object): Players finance info
@@ -28,7 +27,7 @@ def finance_update(finance, timer):
         finance (Finance object): players finance info
         timer (Timer object): timer object containing the
         current day, which is used to determine the
-        raise of expenses 
+        raise of expenses
     """
     explist=[10,10,20,20,30,30,40,40]
     finance.money -= finance.exp
