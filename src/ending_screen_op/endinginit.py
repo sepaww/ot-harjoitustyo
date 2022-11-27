@@ -1,5 +1,5 @@
 def need_new_name(days, datab):
-    """A function determining whether a 
+    """A function determining whether a
     name needed or not based
     on did the player make it to highscore table
 
