@@ -57,13 +57,13 @@ def itemgiver():
         list: list of item objects
     """
     length = len(itempool)-1
-    Itemcompone = itempool[r(0, length)]
-    Itemcomptwo = itempool[r(0, length)]
-    Itemcompthree = itempool[r(0, length)]
-    item1 = Item(Itemcompone[0], Itemcompone[1],
-                 Itemcompone[2], Itemcompone[3], Itemcompone[4])
-    item2 = Item(Itemcomptwo[0], Itemcomptwo[1],
-                 Itemcomptwo[2], Itemcomptwo[3], Itemcomptwo[4])
-    item3 = Item(Itemcompthree[0], Itemcompthree[1],
-                 Itemcompthree[2], Itemcompthree[3], Itemcompthree[4])
+    itemcompone = itempool[r(0, length)]
+    itemcomptwo = itempool[r(0, length)]
+    itemcompthree = itempool[r(0, length)]
+    itemone = Item(itemcompone[0], itemcompone[1],
+                 itemcompone[2], itemcompone[3], itemcompone[4])
+    itemtwo = Item(itemcomptwo[0], itemcomptwo[1],
+                 itemcomptwo[2], itemcomptwo[3], itemcomptwo[4])
+    itemthree = Item(itemcompthree[0], itemcompthree[1],
+                 itemcompthree[2], itemcompthree[3], itemcompthree[4])
     return [itemone, itemtwo, itemthree]
