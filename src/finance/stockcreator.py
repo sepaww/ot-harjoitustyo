@@ -12,7 +12,8 @@ def create_stocks():
     volatility = []
     stocks = []
     names = ["Kenny's chickens", "Roasted Toast", "GravyGrapes", "MinorMicrodose", "WarTech",
-             "WesternEast", "Musked", "MentalMorgue", "ChinaMade", "Tiimari", "DrugStorez", "Fine9Dine"]
+             "WesternEast", "Musked", "MentalMorgue", "ChinaMade",
+             "Tiimari", "DrugStorez", "Fine9Dine"]
     tempnames = names.copy()
     namel = len(names)
     for i in range(1, 101):
