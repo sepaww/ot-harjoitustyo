@@ -51,7 +51,7 @@ def create_history(stocks):
     i = 0
     for i in range(9):
         stocks.append([])
-        cur = s[i]
+        cur = stocks[i]
         j = 0
         for stock in cur:
             newstock = stock_operator(stock)
@@ -67,7 +67,7 @@ def stock_update(stocks):
     add a new days stocks to stocklist
 
     Args:
-        s (matrix): list that has the stocks of each in sublists 
+        s (matrix): list that has the stocks of each in sublists
         and each stock in sublist is a 4 item long list itself
 
     Returns:
