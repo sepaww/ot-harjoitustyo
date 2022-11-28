@@ -8,7 +8,10 @@ class Databaseop:
     def __init__(self):
         """initiator
         """
-        self.data = sqlite3.connect("highscore.db")
+        import os
+        dirname = os.path.dirname(__file__)
+        database_spot = os.path.join(dirname, "..", "highscore.db")
+        self.data = sqlite3.connect(database_spot)
         self.data.isolation_level = None
         self.names = 0
         self.days = 0
