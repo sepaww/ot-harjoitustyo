@@ -14,15 +14,18 @@ tulo sekä meno määrä tai jokin sijoitusta auttava ns. perkki.
 
 ## Käyttöliittymäluonnos
 Peli koostuu 6 eri näkymästä:
-- Aloitusruutu, jossa pelaaja voi käynnistää pelin.
-- Pelinäkymä, jossa pelaaja näkee: osakkeet ja niihin liittyvät tiedot, rahamääränsa ja menomääränsä.
+- Aloitusruutu, jossa pelaaja voi käynnistää pelin. "tehty"
+- Pelinäkymä, jossa pelaaja näkee: osakkeet ja niihin liittyvät tiedot, rahamääränsa ja menomääränsä. "tehty"
 - Osakehistoria, jossa pelaaja voi tarkastella osakkeen kurssihistoriaa.
-- Kauppa, josta pelaaja voi ostaa pelin kulkua muokkaavia asioita.
-- Tulosruutu, josta pelaaja näkee miten viime sijoitus sessio meni.
-- Gameover-ruutu, johon siirrytään pelaajan hävitessä pelin.
+- Kauppa, josta pelaaja voi ostaa pelin kulkua muokkaavia asioita. "tehty"
+- Tulosruutu, josta pelaaja näkee miten viime sijoitus sessio meni. "tehty"
+- Gameover-ruutu, johon siirrytään pelaajan hävitessä pelin. "tehty"
 
 ##Perusversion tarjoama toiminnallisuus
-
+- aloitusruutu, jossa start näppäin
+- peliruutu, jossa pelaaja voi ostaa osakkeita tai tuotteita marketista. peliruutu siirtyy summary ruutuun ajan loppuessa tai pelaajan erikseen end-näppäintä painaessa. peliruudusta pelaaja myös näkee rahansa. sovelluslogiikkaan kuuluu kurssien teko sekä päivitys toiminnot, kauppaan tuotteiden lisäys, sekä rahallisten toimintojen toteutus pelaajan rahasaldoon oston tapahtuessa.
+- summary ruutu, jossa pelaaja voi tarkastella netto arvoaan, eli omistamiensa osakkeiden yhteisarvoa sekä käteisen summaa. pelaaja voi myös tarkastella uusia nousseita kulujaan. sovelluslogiikkaan kuuluu päivän vaihtoon liittyvät ominaisuudet, kuten pelaajan rahasaldon päivittäminen, pelin häviämisen ehtojen täyttymisen tarkastelu, nettoarvon laskeminen sekä tarvittavien ominaisuuksien alustaminen/päivittäminen tulevaa päivää varten.
+- loppu ruutu, jossa pelaaja voi tarkastella ennätys taulukkoa sekä listoille päästessään kirjoittaa neli-merkkisen nimensä, joka tallennetaan databaseen highscore. Sovelluslogiikkaan kuuluu databasen ylläpito, nimen kirjoittamista hallitseva ohjelma sekä viimeinen näkymä, jossa pelaaja voi joko pelata uudelleen tai lopettaa pelaamisen, mikä sammuttaa ohjelman
 
 ### Aloitusruutu
 - Käyttäjä voi painaa hiirellä nappia aloittaakseen pelin
