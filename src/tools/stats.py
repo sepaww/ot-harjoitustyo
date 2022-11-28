@@ -7,16 +7,27 @@ class Stats():
         """
         import pygame
         pygame.init()
-        self.screen_width = 64*15
-        self.screen_height = 64*12
+        config=open("config.txt", "r")
+        configlist=[]
+        for line in config.read().splitlines():
+            if line[0]!="!":
+                configlist.append(line)
+        
+        if len(configlist)!=13:
+            raise ValueError("Problems in config")
+        
+        self.screen_width = int(configlist.pop(0))
+        
+        self.screen_height = int(configlist.pop(0))
+        
+        self.startfont = pygame.font.SysFont(configlist.pop(0), int(configlist.pop(0)))
+        
+        self.smallfont = pygame.font.SysFont(configlist.pop(0), int(configlist.pop(0)))
+        self.infofont = pygame.font.SysFont(configlist.pop(0), int(configlist.pop(0)))
 
-        self.startfont = pygame.font.SysFont("comicsans", 60)
-        self.smallfont = pygame.font.SysFont("comicsans", 25)
-        self.infofont = pygame.font.SysFont("comicsans", 30)
+        self.default_color = configlist.pop(0)
+        self.lighter_default_color = configlist.pop(0)
+        self.darker_default_color = configlist.pop(0)
+        self.midlight_default_color = configlist.pop(0)
 
-        self.default_color = "#172226"
-        self.lighter_default_color = "#2d424a"
-        self.darker_default_color = "#131b1f"
-        self.midlight_default_color = "#203036"
-
-        self.name = "pörssipeli"
+        self.name = configlist.pop(0)
