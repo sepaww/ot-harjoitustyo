@@ -5,9 +5,15 @@ class Stats():
     def __init__(self):
         """initiator
         """
+        import os
         import pygame
+        
         pygame.init()
-        config=open("config.txt", "r")
+        
+        dirname = os.path.dirname(__file__)
+        configspot = os.path.join(dirname, "..", "config.txt")
+        config=open(configspot, "r")
+        
         configlist=[]
         for line in config.read().splitlines():
             if line[0]!="!":
