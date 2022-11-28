@@ -28,6 +28,8 @@ Peli on jaoteltu useisiin kansioihin niiden tyypin perusteella. Ohjelmaa pyörit
       Main "*" --> "1" stockcreator
        Main "*" --> "1" Finance
         Main "*" --> "1" Items
+         Main "*" --> "1" database_op
+         Main "*" --> "1" endinginit
       class Main{
           start_screen
           run
@@ -41,12 +43,12 @@ Peli on jaoteltu useisiin kansioihin niiden tyypin perusteella. Ohjelmaa pyörit
           itemgiver
       }
       stockcreator "*" --> "1" stockhistory
-      class Stockcreator{
+      class stockcreator{
           create_stocks
           
       }
       
-      class Stockhistory{
+      class stockhistory{
           stock_operator
           create_history
           
