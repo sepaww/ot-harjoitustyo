@@ -16,4 +16,4 @@ Itsekeksitty klikkeri/resurssien managerointi peli, jossa kilpaillaan sekä infl
 
 [changelog](dokumentaatio/changelog.md)
 
-[arkkitehtuuri](dokumentaatio/arkkitehtuuri.md
+[arkkitehtuuri](dokumentaatio/arkkitehtuuri.md)
