@@ -35,3 +35,12 @@
 - paranneltu osakkeiden koodia (vähemmän copypastea)
 - ohjelman koodi luokiteltu omiin osiinsa ja niitä vastaaviin foldereihin (vähemmän koodia yhdellä tiedostolla jolloin toivottavasti selkeämpää)
 - changelog ja tuntikirjanpito erillisiksi
+
+# 28.11.2022
+- Lisätty ending screeniin liittyvät pygame koodit sekä sovelluslogiikkaan liittyvät koodit kuten database_op sekä endinginit.
+- lisätty database
+- parannettu hakemisto rakennetta src:n sisällä
+- lisätty stats luokka, josta voidaan lukea ja lisätä vaivattomasti yleisesti käytettyjä käyttöliittymään liittyviä muuttujia.
+- Lisätty config.txt, josta stats lukee tietonsa.
+- massiivinen linttaus listan lyhennys sadoista neljään.
+- seuraavaksi reroll toiminto kauppaan, hahmovalikko ja osakehistoria
