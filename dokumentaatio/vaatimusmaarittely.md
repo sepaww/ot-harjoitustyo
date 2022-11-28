@@ -3,7 +3,7 @@
 ## Sovelluksen tarkoitus
 
 Sovellus pyörittää leikkimielistä sijoituspeliä, jossa pelaajan tavoitteena on selvitä alati nousevasta vuokrasta
-sijoittamalla järkevästi annettuihin osakkeisin. Pelaajalle jaetaan osakkeista tarvittavat tiedot,
+sijoittamalla järkevästi annettuihin osakkeisiin. Pelaajalle jaetaan osakkeista tarvittavat tiedot,
 kuten hinta, nousu- tai laskusuhdanne ja osakehistoria, joiden avulla tämä voi tehdä optimaalisia investointeja. Pelin kulku seuraa
 roguelite tyyliä riskin ja palkkion periaattein. Pelaajan on oltava valmis ottamaan riskejä, mutta liiallinen riski tuo konkurssin
 
