@@ -85,30 +85,31 @@ def run(listofthings):
     timer = lot[6]
     screen.fill((Stat.default_color))
     loop = True
-    original_reroll=wholefinance.rerollprice
+    original_reroll = wholefinance.rerollprice
     # MAIN LOOP
     while loop:
         timedifference = pygame.time.get_ticks()-timer.start_time
-        #Whether we are in shop or stock view
+        # Whether we are in shop or stock view
         if shopswitch.take:
-            rerolled=inputs.inputter_market(shopswitch, itemlist, wholefinance, dayswitch)
+            rerolled = inputs.inputter_market(
+                shopswitch, itemlist, wholefinance, dayswitch)
             if rerolled:
-                itemlist=items.itemgiver()
+                itemlist = items.itemgiver()
             draw_screen.drawshop(itemlist, screen, wholefinance)
             if not shopswitch.take:
                 draw_screen.blank(screen)
 
         else:
             inputs.inputter_stock(owned, stocks, wholefinance,
-                             shopswitch, dayswitch)
+                                  shopswitch, dayswitch)
             draw_screen.drawstocks(stocks, screen)
             draw_screen.drawowned(owned, screen)
             if shopswitch.take:
                 draw_screen.blank(screen)
-        #Draws finance info
+        # Draws finance info
         draw_screen.drawinfo(wholefinance, timedifference, timer, screen)
-        #Checking if player has clicked end or timer has run out.
-        #If so, engages day_change_operations or ends game if not enough money
+        # Checking if player has clicked end or timer has run out.
+        # If so, engages day_change_operations or ends game if not enough money
         if 30-timedifference/1000 <= 0 or dayswitch.take:
             dayswitch.take = False
             draw_screen.wholeblank(screen)
@@ -119,7 +120,7 @@ def run(listofthings):
             summary = summarylist[0]
             itemlist = summarylist[1]
             stocks = summarylist[2]
-            wholefinance.rerollprice=original_reroll
+            wholefinance.rerollprice = original_reroll
             summaryloop = True
 
             while summaryloop:
@@ -134,9 +135,10 @@ def run(listofthings):
     return timer.day
 ################################################
 
+
 def character_select():
     draw_screen.draw_character_select(screen, character_list)
-    character=inputs.character_select_input(character_list)
+    character = inputs.character_select_input(character_list)
     return character
 
 
@@ -149,10 +151,10 @@ def initialize():
         days: the amount of days the player lasted.
     """
     draw_screen.wholeblank(screen)
-    #Character select loop
-    Character=None
-    while Character==None:
-        Character=character_select()
+    # Character select loop
+    Character = None
+    while Character == None:
+        Character = character_select()
         pygame.display.update()
     stocks = stcr.create_stocks()
     money = Finance.Finance(Character)

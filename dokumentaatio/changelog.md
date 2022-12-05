@@ -44,3 +44,10 @@
 - Lisätty config.txt, josta stats lukee tietonsa.
 - massiivinen linttaus listan lyhennys sadoista neljään.
 - seuraavaksi reroll toiminto kauppaan, hahmovalikko ja osakehistoria
+
+# 5.12.2022
+- erotettu pelilogiikkaa käyttöliittymästä (lähinnä inputtien pieniä muutoksia rahatilanteeseen erotettu financeen uusiksi funktioiksi)
+- lisätty reroll ominaisuus kauppaan sekä tehty sille skaalautuvuus
+- lisätty hahmovalikko, jossa 4 erilaista hahmo vaihtoehtoa, jotka kukin vaikuttavat pelin kulkuun omalla tavallaan.
+- seuraavaksi osakehistoria, mahdollisesti item_maker ominaisuus taikka hahmo_maker
+

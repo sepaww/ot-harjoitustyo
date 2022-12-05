@@ -3,40 +3,44 @@
 
 # ti 8.11.2022
 - noin 6h
-- yht 13
+- yht 13h
  
 # ke 9.11.2022
 - noin 8h
-- yht 21
+- yht 21h
 
 # to 10.11.2022
 - 1h
-- yht 22
+- yht 22h
 
 # la 12.11.2022
 - 4h
-- yht 26
+- yht 26h
 
 # viikko 46
 - noin 5h hajanaisena
-- yht 31
+- yht 31h
 
 # 21.11.2022
 - 7h
-- yht 38
+- yht 38h
 
 # 22.11.2022
 - 3h
-- yht 41
+- yht 41h
 
 # 26.11.2022
 - 4h
-- yht 45
+- yht 45h
 
 # 27.11.2022
 - 3h
-- yht 48
+- yht 48h
 
-#28.11.2022
+# 28.11.2022
 - 4h
-- yht 52
+- yht 52h
+
+# 5.12.2022
+- 7h
+- yht 59h

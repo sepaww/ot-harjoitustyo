@@ -1,9 +1,9 @@
 import sys
 from finance import effects as effects
-from tools.stats import Stats 
+from tools.stats import Stats
 import pygame
 pygame.init()
-Stat=Stats()
+Stat = Stats()
 
 
 def quitevent(event):
@@ -112,8 +112,8 @@ def inputter_market(switch, itemlist, wholefinance, dayswitch):
                     itemlist[2].sold = True
             elif Stat.screen_width/2-155 <= mouse[0] <= Stat.screen_width/2-55 and 160 <= mouse[1] <= 210:
                 dayswitch.take = True
-            elif Stat.screen_width/2-150 <=mouse[0] <= Stat.screen_width/2 and  Stat.screen_height/2+250 <= mouse[1] <=  Stat.screen_height/2+350:
-                if wholefinance.money>=wholefinance.rerollprice:
+            elif Stat.screen_width/2-150 <= mouse[0] <= Stat.screen_width/2 and Stat.screen_height/2+250 <= mouse[1] <= Stat.screen_height/2+350:
+                if wholefinance.money >= wholefinance.rerollprice:
                     wholefinance.change_amount(wholefinance.rerollprice)
                     wholefinance.reroll_doubler()
                     return True

@@ -29,11 +29,11 @@ def finance_update(finance, timer):
         current day, which is used to determine the
         raise of expenses
     """
-    
+
     finance.money -= finance.exp
     finance.money += finance.inc
     if timer.day > len(finance.explist)-1:
         finance.exp += finance.standard_exp_increase
-        finance.exp += timer.day*2 
+        finance.exp += timer.day*2
     else:
         finance.exp += finance.explist[timer.day]

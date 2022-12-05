@@ -89,13 +89,19 @@ def drawowned(o, screen):
     shoptxt = Stat.startfont.render("market", True, Stat.txt_color)
     screen.blit(shoptxt, (Stat.screen_width/2+140, startheight+10))
 
+
 def draw_character_select(screen, chr_list):
-    draw_no.draw_chr(screen, chr_list[0], Stat.screen_width/2-450, Stat.screen_height/2-350)
-    draw_no.draw_chr(screen, chr_list[1], Stat.screen_width/2+50, Stat.screen_height/2-350)
-    draw_no.draw_chr(screen, chr_list[2], Stat.screen_width/2-450, Stat.screen_height/2+50)
-    draw_no.draw_chr(screen, chr_list[3], Stat.screen_width/2+50, Stat.screen_height/2+50)
+    draw_no.draw_chr(
+        screen, chr_list[0], Stat.screen_width/2-450, Stat.screen_height/2-350)
+    draw_no.draw_chr(
+        screen, chr_list[1], Stat.screen_width/2+50, Stat.screen_height/2-350)
+    draw_no.draw_chr(
+        screen, chr_list[2], Stat.screen_width/2-450, Stat.screen_height/2+50)
+    draw_no.draw_chr(
+        screen, chr_list[3], Stat.screen_width/2+50, Stat.screen_height/2+50)
     draw_no.draw_txt(Stat.infofont, str(
-            "Select your character"), Stat.txt_color, screen, Stat.screen_width/2-150, Stat.screen_height/2-20)
+        "Select your character"), Stat.txt_color, screen, Stat.screen_width/2-150, Stat.screen_height/2-20)
+
 
 def drawshop(itemlist, screen, finance):
     mouse = pygame.mouse.get_pos()
@@ -117,12 +123,13 @@ def drawshop(itemlist, screen, finance):
         draw_no.draw_thing(itemlist[2], screen, Stat.screen_width/2+10, 450)
     else:
         draw_no.draw_sold(Stat.startfont, screen, Stat.screen_width/2+10, 450)
-    #Reroll
-    draw_hl.draw_highlight(screen, Stat.screen_width/2-150, Stat.screen_height/2+250, 150, 100)
+    # Reroll
+    draw_hl.draw_highlight(screen, Stat.screen_width /
+                           2-150, Stat.screen_height/2+250, 150, 100)
     draw_no.draw_txt(Stat.smallfont, str(
-            "Reroll"), Stat.txt_color, screen, Stat.screen_width/2-110, Stat.screen_height/2+260)
+        "Reroll"), Stat.txt_color, screen, Stat.screen_width/2-110, Stat.screen_height/2+260)
     draw_no.draw_txt(Stat.smallfont, str(
-            finance.rerollprice), Stat.txt_color, screen, Stat.screen_width/2-110, Stat.screen_height/2+300)
+        finance.rerollprice), Stat.txt_color, screen, Stat.screen_width/2-110, Stat.screen_height/2+300)
 
 
 def drawstocks(stocks, screen):
