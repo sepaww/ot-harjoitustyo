@@ -1,6 +1,7 @@
 import unittest
 import finance.effects as ef
 import finance.Finance as F
+from random import seed
 
 
 class Test_Stock_history(unittest.TestCase):
@@ -22,3 +23,15 @@ class Test_Stock_history(unittest.TestCase):
         self.assertEqual(self.Finance.money, 310)
         self.assertEqual(self.Finance.exp, 20)
         self.assertEqual(self.Finance.inc, 70)
+        
+    def test_correct_apply(self):
+        seed(1)
+        ef.apply_effect(self.lotteryeff, self.Finance)
+        self.assertEqual(self.Finance.money, 300)
+        seed(100)
+        ef.apply_effect(self.lotteryeff, self.Finance)
+        self.assertEqual(self.Finance.money, 300)
+        seed(30)
+        ef.apply_effect(self.lotteryeff, self.Finance)
+        self.assertEqual(self.Finance.money, 300)
+        
