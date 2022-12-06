@@ -21,7 +21,7 @@ class Test_Finance(unittest.TestCase):
         self.assertEqual(self.finance.money, 290)
         
     def test_addition(self):
-        self.finance.change_amount(10)
+        self.finance.change_amount_up(10)
         self.assertEqual(self.finance.money, 310)
     
     def test_reroll_doubler(self):
