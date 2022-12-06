@@ -63,6 +63,8 @@ Peli on jaoteltu useisiin kansioihin niiden tyypin perusteella. Ohjelmaa pyörit
 ## Päätoiminnallisuus
 Kuvataan pelin toimintaa kolmella sekvenssi kaaviolla.
 
+## osa sekvenssikaavioista kaipaa päivitystä!!!
+
 ### Pelin käynnistystä sekä alustamista kuvaa seuraava sekvenssi kaavio
 ```mermaid
 sequenceDiagram
@@ -146,3 +148,31 @@ sequenceDiagram
   User->>inputs: Player clicks on "okey" button and a new day begins and timer resets
   Main->>draw_screen: wholeblank() clears whole screen
 ```
+
+### lopetus ruutu ja ennätyslista
+
+  ```mermaid
+sequenceDiagram
+  actor User
+  participant inputs
+  participant main
+  participant Finance
+  participant items
+  participant stockhistory
+  participant draw_ending
+  participant database_op
+  participant endinginit
+  main->>main: ending_screen(days)
+  main->>database_op: database=Databaseop()
+  database_op->>database_op: self.exist()
+  database_op->>database_op: self.geths()
+  main->>endinit: need_new_name(days, database) (in this case player made it to highscoretable and name is needed)
+  main->>draw_ending: draw_name_need(database, screen)
+  main->>endinputs: nameinputs(database, needname, cursorposition)
+  User->>endinputs: player types their name and pressses enter ending loop
+  main->>draw_en.draw_hs(database, screen) draw highscorelist
+  main->>endinputs: nextinputs()
+  User->>endinputs: player presses play again
+  main->>main: back to starting screen loop
+```
+
