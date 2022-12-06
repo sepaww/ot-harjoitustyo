@@ -154,7 +154,7 @@ sequenceDiagram
   ```mermaid
 sequenceDiagram
   actor User
-  participant inputs
+  participant endinputs
   participant main
   participant Finance
   participant items
