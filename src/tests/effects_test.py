@@ -19,6 +19,6 @@ class Test_Stock_history(unittest.TestCase):
 
     def test_correct_apply(self):
         ef.apply_effect(self.effectlist, self.Finance)
-        self.assertEqual(self.Finance.money, 110)
+        self.assertEqual(self.Finance.money, 310)
         self.assertEqual(self.Finance.exp, 20)
         self.assertEqual(self.Finance.inc, 70)
