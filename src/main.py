@@ -8,8 +8,6 @@ from finance.Finance import character_list
 
 from day_change_op import daychange
 
-from tools import draw_higlight as draw_hl
-from tools import draw_normal as draw_no
 from tools.stats import Stats
 
 from screen import draw_screen
@@ -152,12 +150,12 @@ def initialize():
     """
     draw_screen.wholeblank(screen)
     # Character select loop
-    Character = None
-    while Character == None:
-        Character = character_select()
+    character = None
+    while character is None:
+        character = character_select()
         pygame.display.update()
     stocks = stcr.create_stocks()
-    money = Finance.Finance(Character)
+    money = Finance.Finance(character)
     owned = Ownedstocks()
     switch = Switch()
     dayswitch = Switch()
@@ -208,9 +206,10 @@ def starting_screen():
                 pygame.quit()
                 sys.exit()
             if event.type == pygame.MOUSEBUTTONDOWN:
-                if Stat.screen_width/2-100 <= startmouse[0] <= Stat.screen_width/2+90 and Stat.screen_height/2-40 <= startmouse[1] <= Stat.screen_height/2+40:
-                    days = initialize()
-                    ending_screen(days)
+                if Stat.screen_width/2-100 <= startmouse[0] <= Stat.screen_width/2+90
+                    if Stat.screen_height/2-40 <= startmouse[1] <= Stat.screen_height/2+40:
+                        days = initialize()
+                        ending_screen(days)
         screen.fill((Stat.default_color))
 
         dr_strt.draw_startscreen(screen)
