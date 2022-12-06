@@ -51,3 +51,8 @@
 - lisätty hahmovalikko, jossa 4 erilaista hahmo vaihtoehtoa, jotka kukin vaikuttavat pelin kulkuun omalla tavallaan.
 - seuraavaksi osakehistoria, mahdollisesti item_maker ominaisuus taikka hahmo_maker
 
+# 6.12.2022
+- pelin värit nyt täysin muutettavissa pelaajan toiveiden mukaan. (nyt myös teksti)
+- parempi testikattavuus
+- uudelleen lintattu
+- alustavat sekvenssikaaviot
