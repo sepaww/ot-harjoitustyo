@@ -3,7 +3,9 @@
 - ui:
   - screen
   - inputs
+  - tools
 - repositories:
+  - stats tools kansiosta
   - database_op ending_screen_op kansiosta
 - services:
   - day_change_op
