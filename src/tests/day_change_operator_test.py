@@ -27,7 +27,7 @@ class Test_DOP(unittest.TestCase):
     def test_finance_update(self):
         op.finance_update(self.finance, self.time)
         self.assertEqual(self.finance.money, 300)
-        self.assertEqual(self.finance.exp, 80)
+        self.assertEqual(self.finance.exp, 90)
 
     def test_finance_update_highday(self):
         self.time.day = 10
