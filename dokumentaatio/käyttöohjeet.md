@@ -39,4 +39,4 @@ Testikattavuusraportin voi generoida komennolla:
 poetry run invoke coverage-report
 ```
 
-Testien raportin voi luokea hakemiston _htmlcov_ tiedoston index.html avulla.
+Testien raportin voi luokea hakemiston _htmlcov_ tiedoston index.html avulla tai komentoriviin tulostuvalla informaatiolla.
