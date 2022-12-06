@@ -30,7 +30,7 @@ class Test_Stock_history(unittest.TestCase):
         self.assertEqual(self.Finance.money, 310)
         seed(100)
         ef.apply_effect(self.lotteryeff, self.Finance)
-        self.assertEqual(self.Finance.money, 300)
+        self.assertEqual(self.Finance.money, 320)
         seed(30)
         ef.apply_effect(self.lotteryeff, self.Finance)
         self.assertEqual(self.Finance.money, 300)
