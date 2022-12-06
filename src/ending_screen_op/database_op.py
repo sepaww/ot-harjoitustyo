@@ -4,11 +4,9 @@ import os
 class Databaseop:
     """Class for operating the highscore database
     """
-
     def __init__(self):
         """initiator
         """
-        
         dirname = os.path.dirname(__file__)
         database_spot = os.path.join(dirname, "..", "highscore.db")
         self.data = sqlite3.connect(database_spot)
