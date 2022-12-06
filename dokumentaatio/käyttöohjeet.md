@@ -40,3 +40,9 @@ poetry run invoke coverage-report
 ```
 
 Testien raportin voi luokea hakemiston _htmlcov_ tiedoston index.html avulla tai komentoriviin tulostuvalla informaatiolla.
+
+pylint virheet saa esiin komennolla:
+
+```bash
+poetry run invoke lint
+```
