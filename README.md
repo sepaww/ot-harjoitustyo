@@ -22,6 +22,8 @@ Itsekeksitty klikkeri/resurssien managerointi peli, jossa kilpaillaan sekä infl
 - päivien välissä (ajastimen loppuessa) pelaajan käteisvaroista vähennetään menot. jos pelaajalla ei ole tarpeeksi käteistä päivän lopussa maksaa hän häviää pelin.
 - osakkeiden kurssit vaihtelevat melko villisti päivien välissä sekä kaupan tarjonta vaihtuu.
 
+[releasevko5](https://github.com/sepaww/ot-harjoitustyo/releases/tag/viikko5)
+
 [käyttöönotto](dokumentaatio/käyttöohjeet.md)
 
 [tuntikirjanpito](dokumentaatio/tuntikirjanpito.md)
