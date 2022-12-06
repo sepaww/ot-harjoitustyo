@@ -1,3 +1,15 @@
+# hakemisto
+-ajattelin muuttaa hakemisto rakenteen sijoittamalla tämän hetkiset kansiot kansioihin ui, repositories ja services.
+- ui:
+ - screen
+ - inputs
+- repositories:
+ - database_op ending_screen_op kansiosta
+- services:
+ - day_change_op
+ - ending_screen_op
+ - finance
+
 # Pörssipeli projekti
 Itsekeksitty klikkeri/resurssien managerointi peli, jossa kilpaillaan sekä inflaatiota että aikaa vastaan
 
