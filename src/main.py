@@ -33,33 +33,6 @@ clock.tick(10)
 
 mouse = pygame.mouse.get_pos()
 
-
-class Ownedstocks():
-    """a list with the purpose of tracking the indexes of
-    owned stocks in the stocklist and their amount
-    """
-
-    def __init__(self):
-        self.owned = [0]*10
-
-
-class Switch():
-    """Gereral purpose global boolian
-    """
-
-    def __init__(self):
-        self.take = False
-
-
-class Timer():
-    """Timer object for time limit tracking and day highscore tracking
-    """
-
-    def __init__(self):
-        self.start_time = pygame.time.get_ticks()
-        self.day = 1
-
-
 def run(listofthings):
     """Main loop. takes value from initialize and calls for
     gamelogic functions and pygame inputs and draw_screens.
@@ -157,10 +130,10 @@ def initialize():
         pygame.display.update()
     stocks = stcr.create_stocks()
     money = Finance.Finance(character)
-    owned = Ownedstocks()
-    switch = Switch()
-    dayswitch = Switch()
-    time = Timer()
+    owned = stats.Ownedstocks()
+    switch = stats.Switch()
+    dayswitch = stats.Switch()
+    time = stats.Timer()
     itemlist = items.itemgiver()
 
     return run([stocks, money, owned, switch, itemlist, dayswitch, time])
