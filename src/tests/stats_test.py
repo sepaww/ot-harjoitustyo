@@ -27,9 +27,9 @@ class Test_Stats(unittest.TestCase):
         #-----------------------------------------
         self.assertEqual(self.Stat.screen_height, 768)
         self.assertEqual(self.Stat.screen_width, 960)
-
+        pygame.quit()
     def test_Ownedstocks(self):
-        self.assertEqual(len(self.Ownedstocks), 10)
+        self.assertEqual(len(self.Ownedstocks.owned), 10)
         for alk in self.Ownedstocks:
             self.assertEqual(alk, 0)
             
