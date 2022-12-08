@@ -15,3 +15,14 @@ class Test_Stock_history(unittest.TestCase):
         self.assertEqual(item.effect, self.imaginary_item[3])
         self.assertEqual(item.price, self.imaginary_item[4])
         self.assertEqual(item.sold, False)
+
+    def test_itemgiver(self):
+        itemlist=it.itemgiver()
+        for item in itemlist:
+            self.assertEqual(type(item.name), str)
+            self.assertEqual(type(item.description), str)
+            self.assertEqual(type(item.effectstr), str)
+            self.assertEqual(type(item.effect), list)
+            self.assertEqual(type(item.effect[0]), tuple)
+            self.assertEqual(type(item.price), int)
+            self.assertEqual(item.sold, False)
