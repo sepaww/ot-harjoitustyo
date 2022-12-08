@@ -8,7 +8,7 @@ from finance.Finance import character_list
 
 from day_change_op import daychange
 
-from tools.stats import Stats
+from tools import stats
 
 from screen import draw_screen
 from screen import draw_ending as draw_en
