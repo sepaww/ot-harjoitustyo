@@ -22,7 +22,7 @@ from ending_screen_op import endinginit as endinit
 from ending_screen_op import database_op as data_op
 
 pygame.init()
-Stat = Stats()
+Stat = stats.Stats()
 pygame.display.set_caption(Stat.name)
 
 
