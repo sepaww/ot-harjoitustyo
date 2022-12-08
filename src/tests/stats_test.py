@@ -30,7 +30,7 @@ class Test_Stats(unittest.TestCase):
         pygame.quit()
     def test_Ownedstocks(self):
         self.assertEqual(len(self.Ownedstocks.owned), 10)
-        for alk in self.Ownedstocks:
+        for alk in self.Ownedstocks.owned:
             self.assertEqual(alk, 0)
             
     def test_Timer(self):
