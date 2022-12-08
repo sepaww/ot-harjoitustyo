@@ -1,15 +1,18 @@
+
+import os
+import pygame
+
 class Stats():
     """class for stats used in game's code.
+        reads the information from config.txt
+        has raise and try-except commands to make sure no wrong values slip in to the game
     """
 
     def __init__(self):
         """initiator
         """
-        import os
-        import pygame
-
         pygame.init()
-
+        fake_screen=pygame.display.set_mode((960,768))
         dirname = os.path.dirname(__file__)
         configspot = os.path.join(dirname, "..", "config.txt")
         config = open(configspot, "r")
@@ -20,24 +23,102 @@ class Stats():
                 configlist.append(line)
 
         if len(configlist) != 14:
-            raise ValueError("Problems in config")
+            raise ValueError("Wrong amount of values in config")
+        
+        temp=configlist.pop(0)
+        print(temp)
+        if int(temp)/960 != 1:
+            raise ValueError("Set screen_width back to base value")
+        self.screen_width = int(temp)
+        
+        temp=configlist.pop(0)
+        if int(temp)!=768:
+            raise ValueError("Set screen_height back to base value")
+        self.screen_height = int(temp)
+        
+        temp1=configlist.pop(0)
+        temp2=configlist.pop(0)
+        try:
+            pygame.font.SysFont(temp1, int(temp2))
+        except:
+            raise ValueError("startfont values faulty")
+        self.startfont = pygame.font.SysFont(temp1, int(temp2))
 
-        self.screen_width = int(configlist.pop(0))
+        temp1=configlist.pop(0)
+        temp2=configlist.pop(0)
+        try:
+            pygame.font.SysFont(temp1, int(temp2))
+        except:
+            raise ValueError("smallfont values faulty")
+        self.smallfont = pygame.font.SysFont(temp1, int(temp2))
+        
+        temp1=configlist.pop(0)
+        temp2=configlist.pop(0)
+        try:
+            pygame.font.SysFont(temp1, int(temp2))
+        except:
+            raise ValueError("infofont values faulty")
+        self.infofont = pygame.font.SysFont(temp1, int(temp2))
+        
+        temp=configlist.pop(0)
+        try:
+            pygame.draw.rect(fake_screen,temp,[1,1,1,1])
+        except:
+            raise ValueError("default_color not a color")
+        self.default_color = temp
+        
+        temp=configlist.pop(0)
+        try:
+            pygame.draw.rect(fake_screen,temp,[1,1,1,1])
+        except:
+            raise ValueError("lighter_default_color not a color")
+        self.lighter_default_color = temp
+        
+        temp=configlist.pop(0)
+        try:
+            pygame.draw.rect(fake_screen,temp,[1,1,1,1])
+        except:
+            raise ValueError("darker_default_color not a color")
+        self.darker_default_color = temp
+        
+        temp=configlist.pop(0)
+        try:
+            pygame.draw.rect(fake_screen,temp,[1,1,1,1])
+        except:
+            raise ValueError("midlight_default_color not a color")
+        self.midlight_default_color = temp
+        
+        temp=configlist.pop(0)
+        try:
+            pygame.draw.rect(fake_screen,temp,[1,1,1,1])
+        except:
+            raise ValueError("txt_color not a color")
+        self.txt_color = temp
+        
+        temp=configlist.pop(0)
+        if type(temp)!=str:
+            raise ValueError("games name is not a str")
+        self.name = temp
+        #pygame.quit()
+class Ownedstocks():
+    """a list with the purpose of tracking the indexes of
+    owned stocks in the stocklist and their amount
+    """
 
-        self.screen_height = int(configlist.pop(0))
+    def __init__(self):
+        self.owned = [0]*10
 
-        self.startfont = pygame.font.SysFont(
-            configlist.pop(0), int(configlist.pop(0)))
+class Switch():
+    """Gereral purpose global boolian
+    """
 
-        self.smallfont = pygame.font.SysFont(
-            configlist.pop(0), int(configlist.pop(0)))
-        self.infofont = pygame.font.SysFont(
-            configlist.pop(0), int(configlist.pop(0)))
+    def __init__(self):
+        self.take = False
 
-        self.default_color = configlist.pop(0)
-        self.lighter_default_color = configlist.pop(0)
-        self.darker_default_color = configlist.pop(0)
-        self.midlight_default_color = configlist.pop(0)
-        self.txt_color = configlist.pop(0)
+class Timer():
+    """Timer object for time limit tracking and day highscore tracking
+    """
 
-        self.name = configlist.pop(0)
+    def __init__(self):
+        self.start_time = pygame.time.get_ticks()
+        self.day = 1
