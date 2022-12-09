@@ -35,38 +35,58 @@ monet sovelluksen erityisesti käyttöliittymän käyttämistä muuttujista tule
  ### Luokkakaavio pelin korkean tason kansioiden suhteista
  ```mermaid
  classDiagram
-      src "*" --> ui
-       src "*" --> services
-        src "*" --> repositories
-        src "*" --> tests
-         ui "*" --> draw_screen
-         ui "*" --> inputs
-         ui "*" --> tools
-         services "*" --> day_change_op
-         services "*" --> ending_screen_op
-         services "*" --> finance
+      src "*" -- ui
+       src "*" -- services
+        src "*" -- repositories
+        src "*" -- tests
+         ui "*" -- screen
+         ui "*" -- inputs
+         ui "*" -- tools
+         services "*" -- day_change_op
+         services "*" -- ending_screen_op
+         services "*" -- finance
          
       class src{
           }
       class tests{
+      all tests
           }
       class ui{
           }
       class services{
           }
       class repositories{
+      database_op.py
+      stats.py
           }
       class day_change_op{
+      day_change_operator.py
+      daychange.py
           }
-      class draw_screen{
+      class screen{
+      draw_ending.py
+      draw_screen.py
+      draw_start_screen.py
           }
       class inputs{
+      start_inputs.py
+      endinputs.py
+      inputs.py
           }
       class tools{
+      draw_highlight.py
+      draw_normal.py
           }
       class ending_screen_op{
+      endinginit.py
+      
           }
       class finance{
+      effects.py
+      finance.py
+      items.py
+      stockcreator.py
+      stockhistory.py
           }
      
       
@@ -75,24 +95,23 @@ monet sovelluksen erityisesti käyttöliittymän käyttämistä muuttujista tule
  ### Luokkakaavio main.py:n suhteista
  ```mermaid
  classDiagram
-      Main "*" --> "1" stockcreator
-       Main "*" --> "1" Finance
-        Main "*" --> "1" Items
-         Main "*" --> "1" database_op
-         Main "*" --> "1" endinginit
+      Main "*" -- stockcreator
+       Main "*" -- Finance
+        Main "*" -- Items
+         Main "*" -- database_op
+         Main "*" -- endinginit
+         Main "*" -- stats
       class Main{
-          start_screen
-          run
-          Timer
-          OwnedStocks
-          initialize
+          start_screen()
+          run()
+          initialize()
       }
       class Items{
-          Item
+          Item()
           itempool
-          itemgiver
+          itemgiver()
       }
-      stockcreator "*" --> "1" stockhistory
+      stockcreator "*" -->  stockhistory
       class stockcreator{
           create_stocks
           
@@ -104,10 +123,12 @@ monet sovelluksen erityisesti käyttöliittymän käyttämistä muuttujista tule
           
       }
       
-      class Finance{
-          Finance
+      class finance{
+          Finance()
       }
-      
+      class finance{
+          Finance()
+      }
       
 ```
 ## Päätoiminnallisuus
