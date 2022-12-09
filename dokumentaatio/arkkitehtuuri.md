@@ -129,14 +129,13 @@ monet sovelluksen erityisesti käyttöliittymän käyttämistä muuttujista tule
           
       }
       
-      class database_op{
-          class Database{
+      class database_op.Database{
           cleartable()
           namechange()
           insertintable()
           exist()
           geths()
-          }
+          
       }
       
       class finance{
