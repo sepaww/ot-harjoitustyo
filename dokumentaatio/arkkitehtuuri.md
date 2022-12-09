@@ -42,8 +42,10 @@ monet sovelluksen erityisesti käyttöliittymän käyttämistä muuttujista tule
          ui "*" --> draw_screen
          ui "*" --> inputs
          ui "*" --> tools
-         Main "*" --> endinginit
-         Main "*" --> endinginit
+         services "*" --> day_change_op
+         services "*" --> ending_screen_op
+         services "*" --> finance
+         
       class src{
           }
       class tests{
