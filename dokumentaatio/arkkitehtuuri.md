@@ -131,7 +131,6 @@ monet sovelluksen erityisesti käyttöliittymän käyttämistä muuttujista tule
       
       class database_op{
           class Database{
-          __init__()
           cleartable()
           namechange()
           insertintable()
