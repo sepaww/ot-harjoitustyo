@@ -96,7 +96,7 @@ monet sovelluksen erityisesti käyttöliittymän käyttämistä muuttujista tule
  ```mermaid
  classDiagram
       Main -- stockcreator
-       Main -- Finance
+       Main -- finance
         Main -- items
          Main -- database_op
          Main -- endinginit
@@ -129,7 +129,7 @@ monet sovelluksen erityisesti käyttöliittymän käyttämistä muuttujista tule
           
       }
       
-      class from database_op Databaseop{
+      class Databaseop{
           cleartable()
           namechange()
           insertintable()
