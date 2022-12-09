@@ -129,7 +129,7 @@ monet sovelluksen erityisesti käyttöliittymän käyttämistä muuttujista tule
           
       }
       
-      class database_op.Database{
+      class from database_op Databaseop{
           cleartable()
           namechange()
           insertintable()
