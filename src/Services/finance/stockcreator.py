@@ -34,22 +34,21 @@ def create_stocks():
 
 
 def create_historyview(stocks, index):
-    max_price=0
-    min_price=1000000
-    heightlist=[]
-    #Find max and min values in stocks history
+    max_price = 0
+    min_price = 1000000
+    heightlist = []
+    # Find max and min values in stocks history
     for dayslist in stocks:
-        price=dayslist[index][1]
-        if price>max_price:
-            max_price=price
-        if price<min_price:
-            min_price=price
-    difference=max_price-min_price
+        price = dayslist[index][1]
+        if price > max_price:
+            max_price = price
+        if price < min_price:
+            min_price = price
+    difference = max_price-min_price
     for dayslist in stocks:
-        price=dayslist[index][1]
-        days_price_diff=price-min_price
-        percentual_height=(days_price_diff/difference)
+        price = dayslist[index][1]
+        days_price_diff = price-min_price
+        percentual_height = (days_price_diff/difference)
         heightlist.append(percentual_height)
-    ret_list=[heightlist.copy(), max_price, min_price]
+    ret_list = [heightlist.copy(), max_price, min_price]
     return ret_list
-        

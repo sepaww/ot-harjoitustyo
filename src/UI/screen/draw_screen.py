@@ -48,7 +48,7 @@ def drawinfo(m, timedifference, timer, screen):
     screen.blit(incsentence, (60, 140))
     screen.blit(income, (230, 140))
     timedifference = 30-timedifference/1000
-    
+
     draw_hl.draw_highlight(screen, Stat.screen_width/2-155, 160, 100, 50)
     draw_no.draw_txt(Stat.infofont, "END", Stat.txt_color,
                      screen, Stat.screen_width/2-140, 165)
@@ -67,6 +67,7 @@ def blank(screen):
                      Stat.screen_width/2-50, 0, 800, 800])
     pygame.draw.rect(screen, Stat.default_color, [
                      Stat.screen_width/2-300, 600, 800, 800])
+
 
 def wholeblank(screen):
     pygame.draw.rect(screen, Stat.default_color, [0, 0, 1600, 1600])
@@ -156,18 +157,25 @@ def drawstocks(stocks, screen):
         draw_no.draw_txt(Stat.smallfont, str(
             "H"), Stat.txt_color, screen, Stat.screen_width/2+255, startheight+12)
         startheight += 65
+
+
 def blank_historyview(screen):
     pygame.draw.rect(screen, Stat.default_color, [
-                         20, 400, 420, 700])
+        20, 400, 420, 700])
+
+
 def draw_historyview(pricelist, screen):
     blank_historyview(screen)
     draw_hl.draw_nonhighlight(screen, 20, 250, 400, 300)
-    prices=pricelist[0]
+    prices = pricelist[0]
     for i in range(9):
-        pygame.draw.circle(screen,Stat.txt_color, (i*40+40,530-int(260*prices[i])), 4)
-        pygame.draw.line(screen, Stat.txt_color,(i*40+45,530-int(260*prices[i])), ((i+1)*40+45,530-int(260*prices[i+1])), 2 )
-    pygame.draw.circle(screen,Stat.txt_color, (9*40+40,530-int(260*prices[9])), 4)    
+        pygame.draw.circle(screen, Stat.txt_color,
+                           (i*40+40, 530-int(260*prices[i])), 4)
+        pygame.draw.line(screen, Stat.txt_color, (i*40+45, 530 -
+                         int(260*prices[i])), ((i+1)*40+45, 530-int(260*prices[i+1])), 2)
+    pygame.draw.circle(screen, Stat.txt_color,
+                       (9*40+40, 530-int(260*prices[9])), 4)
     draw_no.draw_txt(Stat.smallfont, str(
-            pricelist[1]), Stat.txt_color, screen, 30, 260)
+        pricelist[1]), Stat.txt_color, screen, 30, 260)
     draw_no.draw_txt(Stat.smallfont, str(
-             pricelist[2]), Stat.txt_color, screen, 30, 510)
+        pricelist[2]), Stat.txt_color, screen, 30, 510)

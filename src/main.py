@@ -22,8 +22,6 @@ from UI.inputs import endinputs
 from UI.inputs import start_inputs
 
 
-
-
 pygame.init()
 Stat = stats.Stats()
 pygame.display.set_caption(Stat.name)
@@ -35,25 +33,27 @@ clock = pygame.time.Clock()
 clock.tick(10)
 mouse = pygame.mouse.get_pos()
 
+
 def gameloop(shopswitch, wholefinance, dayswitch, owned, stocks, itemlist):
-        # Whether we are in shop or stock view
+    # Whether we are in shop or stock view
+    if shopswitch.take:
+        rerolled = inputs.inputter_market(
+            shopswitch, itemlist, wholefinance, dayswitch)
+        if rerolled:
+            itemlist = items.itemgiver()
+        draw_screen.drawshop(itemlist, screen, wholefinance)
+        if not shopswitch.take:
+            draw_screen.blank(screen)
+    else:
+        inputs.inputter_stock(owned, stocks, wholefinance,
+                              shopswitch, dayswitch, screen)
+        draw_screen.drawstocks(stocks, screen)
+        draw_screen.drawowned(owned, screen)
         if shopswitch.take:
-            rerolled = inputs.inputter_market(
-                shopswitch, itemlist, wholefinance, dayswitch)
-            if rerolled:
-                itemlist = items.itemgiver()
-            draw_screen.drawshop(itemlist, screen, wholefinance)
-            if not shopswitch.take:
-                draw_screen.blank(screen)
-        else:
-            inputs.inputter_stock(owned, stocks, wholefinance,
-                                  shopswitch, dayswitch, screen)
-            draw_screen.drawstocks(stocks, screen)
-            draw_screen.drawowned(owned, screen)
-            if shopswitch.take:
-                draw_screen.blank(screen)
-        return itemlist
-        
+            draw_screen.blank(screen)
+    return itemlist
+
+
 def run(listofthings):
     """Main loop. takes value from initialize and calls for
     gamelogic functions and pygame inputs and draw_screens.
@@ -80,8 +80,9 @@ def run(listofthings):
     # MAIN LOOP
     while loop:
         timedifference = pygame.time.get_ticks()-timer.start_time
-        #gameloop
-        itemlist=gameloop(shopswitch, wholefinance, dayswitch, owned, stocks, itemlist)
+        # gameloop
+        itemlist = gameloop(shopswitch, wholefinance,
+                            dayswitch, owned, stocks, itemlist)
         # Draws finance info
         draw_screen.drawinfo(wholefinance, timedifference, timer, screen)
         # Checking if player has clicked end or timer has run out.
@@ -131,7 +132,7 @@ def initialize():
     while character is None:
         character = character_select()
         pygame.display.update()
-        
+
     stocks = stcr.create_stocks()
     money = finance.Finance(character)
     owned = stats.Ownedstocks()
@@ -178,7 +179,7 @@ def starting_screen():
     """
     loop = True
     while loop:
-        startgame=start_inputs.start_inputs()
+        startgame = start_inputs.start_inputs()
         if startgame:
             days = initialize()
             ending_screen(days)

@@ -21,7 +21,8 @@ class Test_DOP(unittest.TestCase):
         self.time = Timer()
         self.time.day = 4
         self.owned = Ownedstocks()
-        self.finance = F.Finance(("Jami", "your average 'Jantteri'", "average", 300, 50, 50, 25, [20, 20, 30, 30, 40, 40], 50))
+        self.finance = F.Finance(("Jami", "your average 'Jantteri'",
+                                 "average", 300, 50, 50, 25, [20, 20, 30, 30, 40, 40], 50))
         self.stocks = st_cr.create_stocks()
 
     def test_finance_update(self):

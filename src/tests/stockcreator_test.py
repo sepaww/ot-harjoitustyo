@@ -21,22 +21,22 @@ class Test_Stock_creator(unittest.TestCase):
     def test_startstock_len(self):
         self.assertEqual(len(self.startstocks), 10)
         self.assertEqual(len(self.startstocks[0]), 10)
-        
+
     def test_stockviewer(self):
-        pricelist=[]
-        diff_list=[]
-        
-        index=1
+        pricelist = []
+        diff_list = []
+
+        index = 1
         for dayslist in self.startstocks:
             pricelist.append(dayslist[index][1])
-        maxprice=max(pricelist)
-        minprice=min(pricelist)
-        bigdiff=maxprice-minprice
+        maxprice = max(pricelist)
+        minprice = min(pricelist)
+        bigdiff = maxprice-minprice
         for arvo in pricelist:
-            arvodiff=arvo-minprice
-            arvodiff=arvodiff/bigdiff
+            arvodiff = arvo-minprice
+            arvodiff = arvodiff/bigdiff
             diff_list.append(arvodiff)
-        ret=st_cr.create_historyview(self.startstocks, index)
+        ret = st_cr.create_historyview(self.startstocks, index)
         self.assertEqual(ret[1], maxprice)
         self.assertEqual(ret[2], minprice)
         for i in range(10):

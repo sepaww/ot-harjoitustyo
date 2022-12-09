@@ -1,7 +1,9 @@
 import sys
 import pygame
 from Repositories.stats import Stats
-Stat=Stats()
+Stat = Stats()
+
+
 def start_inputs():
     startmouse = pygame.mouse.get_pos()
     for event in pygame.event.get():

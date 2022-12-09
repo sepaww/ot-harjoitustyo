@@ -29,12 +29,12 @@ class Finance():
 
 # character attributes:
 character_list = [
-                  ("Jami", "your average 'Jantteri'", "average",
-                   300, 50, 50, 25, [20, 20, 30, 30, 40, 40], 50),
-                  ("Sanna", "High life", "harsh", 1000, 500, 100,
-                  100, [100, 100, 100, 200, 200, 200], 300),
-                  ("Sampo", "professional risk taker", "average",
-                  100, 50, 50, 1, [30, 35, 40, 45], 50),
-                  ("Niilo", "Unemployed with little expenses", "low", 50, 0,
-                   5, 10, [1, 1, 1, 2, 2, 5, 5, 10, 10, 20, 20, 30, 30], 40),
-                  ]
+    ("Jami", "your average 'Jantteri'", "average",
+     300, 50, 50, 25, [20, 20, 30, 30, 40, 40], 50),
+    ("Sanna", "High life", "harsh", 1000, 500, 100,
+     100, [100, 100, 100, 200, 200, 200], 300),
+    ("Sampo", "professional risk taker", "average",
+     100, 50, 50, 1, [30, 35, 40, 45], 50),
+    ("Niilo", "Unemployed with little expenses", "low", 50, 0,
+     5, 10, [1, 1, 1, 2, 2, 5, 5, 10, 10, 20, 20, 30, 30], 40),
+]

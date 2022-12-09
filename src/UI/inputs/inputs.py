@@ -58,7 +58,7 @@ def inputter_stock(ol, stocks, money, switch, dayswitch, screen):
             id = None
             for i in range(10):
                 if Stat.screen_width/2+250 <= mouse[0] <= Stat.screen_width/2+280 and startheight+15 <= mouse[1] <= startheight+45:
-                    price_list=create_historyview(stocks, i)
+                    price_list = create_historyview(stocks, i)
                     draw_historyview(price_list, screen)
                     break
                 elif Stat.screen_width/2 <= mouse[0] <= Stat.screen_width/2+600 and startheight <= mouse[1] <= startheight+60:
@@ -66,7 +66,7 @@ def inputter_stock(ol, stocks, money, switch, dayswitch, screen):
                     break
 
                 startheight += 65
-            startheight=660
+            startheight = 660
             if id != None:
                 curstock = stocks[-1][id]
                 if event.button == left:

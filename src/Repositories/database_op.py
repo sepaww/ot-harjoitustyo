@@ -1,9 +1,11 @@
 import sqlite3
 import os
 
+
 class Databaseop:
     """Class for operating the highscore database
     """
+
     def __init__(self):
         """initiator
         """

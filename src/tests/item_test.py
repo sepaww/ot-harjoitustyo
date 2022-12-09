@@ -17,7 +17,7 @@ class Test_Stock_history(unittest.TestCase):
         self.assertEqual(item.sold, False)
 
     def test_itemgiver(self):
-        itemlist=it.itemgiver()
+        itemlist = it.itemgiver()
         for item in itemlist:
             self.assertEqual(type(item.name), str)
             self.assertEqual(type(item.description), str)
