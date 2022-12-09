@@ -103,7 +103,7 @@ monet sovelluksen erityisesti käyttöliittymän käyttämistä muuttujista tule
          Main -- stats
          Main -- daychange
          Main -- endinginit
-         Main -- database_op
+         Main -- Databaseop
          daychange -- day_change_operator
          daychange -- items
       class Main{
