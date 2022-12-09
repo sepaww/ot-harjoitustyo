@@ -54,17 +54,17 @@ monet sovelluksen erityisesti käyttöliittymän käyttämistä muuttujista tule
           }
       class repositories{
           }
-      class main.py{
+      class day_change_op{
           }
       class draw_screen{
           }
       class inputs{
           }
-      class {
+      class tools{
           }
-      class main.py{
+      class ending_screen_op{
           }
-      class main.py{
+      class finance{
           }
      
       
