@@ -167,27 +167,36 @@ monet sovelluksen erityisesti käyttöliittymän käyttämistä muuttujista tule
 ## Päätoiminnallisuus
 Kuvataan pelin toimintaa neljällä sekvenssi kaaviolla.
 
-## osa sekvenssikaavioista kaipaa päivitystä!!!
 
 ### Pelin käynnistystä sekä alustamista kuvaa seuraava sekvenssi kaavio
 ```mermaid
 sequenceDiagram
   actor User
+  participant start_inputs
+  participant inputs
+  participant draw_start_screen
+  participant draw_screen
   participant Main
-  participant Finance
+  participant finance
   participant items
   participant stockcreator
   participant stockhistory
   User->>Main: Player starts the program
   Main->>Main: starting_screen()
-  User->>Main: Player clicks start
+  Main->>start_inputs: start_inputs()
+  Main->>draw_start_screen()
+  User->>start_inputs: Player clicks start
   Main->>Main: initialize()
+  Main->>Main: character_select()
+  Main->>draw_screen(characterlist)
+  Main->>inputs: character_select_input(characterlist)
+  User->>inputs: Player picks a character
   Main->>stockcreator: create_stocks()
   stockcreator->>stockhistory: create_history(stocks)
-  Main->>Finance:Finance(player_eco)
+  Main->>finance:Finance(player_eco)
   Main->>items: itemgiver()
-  Main->>Main: Ownedstocks()
-  Main->>Main: Timer()
+  Main->>stats: Ownedstocks()
+  Main->>stats: Timer()
   Main->>Main: run([stocks, money, owned, switch, itemlist, dayswitch, time])
   #Game starts running in mainloop and player ends up losing
   Main->>Main: return from run back to starting_screen
@@ -202,25 +211,32 @@ Pelin peliloopin aikana ei juurikaan tapahdu muita pelilogiikan kannalta oleelli
   ```mermaid
 sequenceDiagram
   actor User
+  participant inputs
   participant Main
   participant effects
   participant items
   participant draw_screen
-  participant inputs
   participant (tools)
+  Main->>Main: gameloop(shopswitch, wholefinance, dayswitch, owned, stocks, itemlist)
   Main->>draw_screen: drawinfo(wholefinance, timedifference, timer, screen)
-  Main->>inputs: inputters(owned, stocks, wholefinance, shopswitch, dayswitch)
+  Main->>inputs: inputter_stock(owned, stocks, wholefinance, shopswitch, dayswitch)
   Main->>draw_screen: drawstocks(stocks, screen)
   Main->>draw_screen: drawowned(owned, screen)
   draw_screen->>(tools): certain unique pygame commands are used to draw needed elements on screen
-  User->>inputs: Player leftclicks on a stock, finance.money-stock.price
-  User->>inputs: Player rightclicks on a stock, finance.money+stock.price
+  User->>inputs: Player leftclicks on a stock
+  inputs->>finance: Finance.change_amount(stockprice)
+  User->>inputs: Player rightclicks on a stock
+  inputs->>finance: Finance.change_amount_up(stockprice)
   User->>inputs: Player leftclicks on market-> shopswitch.take=True
   Main->>draw_screen: blank() (cleans the screen to evade drawn objects overlapping
-  Main->>inputs: inputterm(shopswitch, itemlist, wholefinance, dayswitch)
+  Main->>inputs: inputter_market(shopswitch, itemlist, wholefinance, dayswitch)
   Main->>draw_screen: drawshop(itemlist, screen)
-  User->>inputs: User leftclicks on an item
+  User->>inputs: Player leftclicks on an item
   inputs->>effects: apply_effect(effects, financeinfo)
+  User->>inputs: Player clicks reroll
+  Inputs->>finance: Finance.change_amount(Finance.rerollprice)
+  Inputs->>finance: Finance.reroll_doubler()
+  Main->>items: itemgiver()
   User->>inputs: User clicks on end to end the current day -> dayswitch.take=True
   Main->>draw_screen: wholeblank(screen)
 ```
