@@ -56,3 +56,15 @@
 - parempi testikattavuus
 - uudelleen lintattu
 - alustavat sekvenssikaaviot
+
+# 8.12.2022
+- peliin vihdoin lisätty osakehistorian katselu mahdollisuus.
+  - pelaaja voi avata historia näkymän klikkaamalla osakkeen h näppäintä
+  - osakkeen 10 päivän historian korkein sekä alhaisin arvo esitetään graafin ylä sekä ala reunoissa
+- testien kattavuutta korotettu
+- pelissä käytettävien olentojen luokkia siirretty ulos main.pystä stats.py:hyn
+
+# 9.12.2022
+- ohjelmaa lintattu.
+- hakemistorakenne uudistettu.
+- arkkitehtuuri sekä vaatimusmäärittely päivitetty ajantasalle.
