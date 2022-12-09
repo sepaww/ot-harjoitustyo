@@ -92,7 +92,7 @@ monet sovelluksen erityisesti käyttöliittymän käyttämistä muuttujista tule
       
       
 ```
- ### Luokkakaavio main.py:n suhteista
+ ### Luokkakaavio main.py:n suhteista (käyttöliittymän koodia ei ole otettu mukaan)
  ```mermaid
  classDiagram
       Main -- stockcreator
