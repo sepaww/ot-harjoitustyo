@@ -286,7 +286,7 @@ sequenceDiagram
   main->>database_op: database=Databaseop()
   database_op->>database_op: self.exist()
   database_op->>database_op: self.geths()
-  main->>endinit: need_new_name(days. database) (in this case player made it to highscoretable and name is needed)
+  main->>endinginit: need_new_name(days. database) (in this case player made it to highscoretable and name is needed)
   main->>draw_ending: draw_name_need(database. screen)
   main->>endinputs: nameinputs(database. needname. cursorposition)
   User->>endinputs: player types their name and pressses enter ending loop
