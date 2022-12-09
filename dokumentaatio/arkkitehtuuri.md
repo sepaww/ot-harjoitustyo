@@ -188,7 +188,7 @@ sequenceDiagram
   User->>start_inputs: Player clicks start
   Main->>Main: initialize()
   Main->>Main: character_select()
-  Main->>draw_screen(characterlist)
+  Main->>draw_screen: draw_character_select(characterlist)
   Main->>inputs: character_select_input(characterlist)
   User->>inputs: Player picks a character
   Main->>stockcreator: create_stocks()
