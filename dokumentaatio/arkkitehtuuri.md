@@ -234,8 +234,8 @@ sequenceDiagram
   User->>inputs: Player leftclicks on an item
   inputs->>effects: apply_effect(effects, financeinfo)
   User->>inputs: Player clicks reroll
-  Inputs->>finance: Finance.change_amount(Finance.rerollprice)
-  Inputs->>finance: Finance.reroll_doubler()
+  inputs->>finance: Finance.change_amount(Finance.rerollprice)
+  inputs->>finance: Finance.reroll_doubler()
   Main->>items: itemgiver()
   User->>inputs: User clicks on end to end the current day -> dayswitch.take=True
   Main->>draw_screen: wholeblank(screen)
