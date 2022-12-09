@@ -290,6 +290,9 @@ sequenceDiagram
   main->>draw_ending: draw_name_need(database. screen)
   main->>endinputs: nameinputs(database. needname. cursorposition)
   User->>endinputs: player types their name and pressses enter ending loop
+  endinputs->>database_op: Database.namechange()
+  database_op->>database_op: Database.cleartable()
+  database_op->>database_op: Database.insertintable()
   main->>draw_ending: draw_hs(database. screen) draw highscorelist
   main->>endinputs: nextinputs()
   User->>endinputs: player presses play again
