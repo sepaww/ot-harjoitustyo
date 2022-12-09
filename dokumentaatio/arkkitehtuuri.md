@@ -11,18 +11,66 @@ Peli on jaoteltu useisiin kansioihin niiden tyypin perusteella. Ohjelmaa pyörit
  
  ## Käyttöliittymä
  
- Peli koostuu kolmesta eri päänäkymästä:
+ Peli koostuu viidestä eri päänäkymästä:
  - aloitusruutu
+ - hahmovalinta
  - peliruutu
     - osake-finanssi näkymä
     - kauppa-finanssi näkymä
     - tiiviste ruutu, jossa pelin sisäisten päivien vaihtuessa kerrotaan pelaajalle tämän nettoarvo, eli onko osakkeista tullut voittoa
- - loppuruutu, jossa selvittyjen päivien määrä sekä ennätystaulu
+ - nimen anto ruutu, jos pelaaja pääsi ennätyslista
+ - loppuruutu, näkyy ennätys taulu sekä mahdollisuus pelata uudelleen tai lopettaa (quit)
  
  ## Sovelluslogiikka
  Sovellusta pyörittää tiedosto main.py, josta kutsutaan kuhunkin pelin tilanteeseen liittyvät funktio sekä käyttöliittymän kontrollointi sekä inputit.
- Peli lähtee käyntiin funktiolla start__screen, josta kutsutaan funktio intialize, josta alustetaan suurin osa pelissä tarvittavista rakeinteista, kuten osakkeet, kaupan sisältö, pelaajan taloudellinen tilanne sekä osake historia.
+ Peli lähtee käyntiin funktiolla start__screen, josta kutsutaan funktio intialize, josta alustetaan suurin osa pelissä tarvittavista rakeinteista, kuten osakkeet, kaupan sisältö, pelaajan taloudellinen tilanne sekä osake historia. Initialize myös huolehtii pelaajan hahmo valinnasta. Kun hahmo on valittu siirtyy sovellus funktioon run, joka pyörittää itse peli looppia. run funktiosta kutsutaan tarvittavat input funktiot sekä draw_screen komennot peli-tilan ylläpitämiseen. run funktiosta voidaan myös päivittää pelaajan raha tilanne sekä kaupa sisältämät tuotteet.
  
+Kun ajastin loppuu tai pelaaja painaa end näppäintä, siirrytään day_change_op tiedostoihin, jotka vastaavat pelaajan nettoarvon laskemisesta sekä uuden päivän alustamisesta, eli tulojen lisäämisestä rahaan, menojen poistaminen rahoista sekä menojen korottaminen.
+
+Jos pelaajalla ei ole käteisvarantoja maksaa kuluja tämä häviää pelin ja siirrytään ending_screen_op tiedostoihin, joissa käsitellään pelin jälkeiset toiminnot. Jos pelaaja on päässyt ennätys tauluun, kysytään tämän nimeä ja pelaajan annettua nimensä tulos talletetaan ennätystaulukkoon repositoriesin database_op avulla.
+ 
+valittu hahmo vaikuttaaa pelaajan aloitusrahan määrään, tuloihin sekä menoihin. Myös yksi tärkeä elementti hahmolla on rerollprice, joka määrittelee miten tehokkaasti tämä voi hyödyntää kauppaa. Hahmon vaikeustasoon vaikuttaa myös menojen skaalautuminen, mikä ilmoitetaan hahmovalikossa.
+ 
+monet sovelluksen erityisesti käyttöliittymän käyttämistä muuttujista tulee stats.py tiedostosta, joka lukee tarvitut tiedot config.txt tiedostosta. stats on (ainakin yritetty) turvattu try-except lausekkeilla, jotta peliin ei pääsisi vääriä pelin kaatavia arvoja. config.txt tiedoston kautta pystyy muuttamaan haluttuja pelin arvoja, kuten tekstin väriä tai yleistä väriteemaa tai fontteja.
+ ### Luokkakaavio pelin korkean tason kansioiden suhteista
+ ```mermaid
+ classDiagram
+      src "*" --> ui
+       src "*" --> services
+        src "*" --> repositories
+        src "*" --> tests
+         ui "*" --> draw_screen
+         ui "*" --> inputs
+         ui "*" --> tools
+         Main "*" --> endinginit
+         Main "*" --> endinginit
+      class src{
+          }
+      class tests{
+          }
+      class ui{
+          }
+      class services{
+          }
+      class repositories{
+          }
+      class main.py{
+          }
+      class draw_screen{
+          }
+      class inputs{
+          }
+      class {
+          }
+      class main.py{
+          }
+      class main.py{
+          }
+     
+      
+      
+```
+ ### Luokkakaavio main.py:n suhteista
  ```mermaid
  classDiagram
       Main "*" --> "1" stockcreator
@@ -61,7 +109,7 @@ Peli on jaoteltu useisiin kansioihin niiden tyypin perusteella. Ohjelmaa pyörit
       
 ```
 ## Päätoiminnallisuus
-Kuvataan pelin toimintaa kolmella sekvenssi kaaviolla.
+Kuvataan pelin toimintaa neljällä sekvenssi kaaviolla.
 
 ## osa sekvenssikaavioista kaipaa päivitystä!!!
 
@@ -93,7 +141,7 @@ sequenceDiagram
 ### Pelin pelinäkymää kuvaava sekvenssi kaavio
 
 Tapahtumat pyörivät main.py tiedoston funktion run loopin sisällä nopeudella 10 tick/second.
-Pelin peliloopin aikana ei juurikaan tapahdu muita pelilogiikan kannalta oleellisia asioita kuin rahatilanteen ylläpito ja omistettujen osakkeiden määrät sekä ostettujen asioiden aiheuttamien muutosten asettaminen voimaan. Suurin osa komennoista koostuu pelaajan syötteen lukemisesta sekä käyttöliittymän päivittämisestä niiden perusteella. kaikki kommunikointi käyttäjän ja ohjelman välillä tapahtuu helpomman käyttäjäkokemuksen luomiseksi.
+Pelin peliloopin aikana ei juurikaan tapahdu muita pelilogiikan kannalta oleellisia asioita kuin rahatilanteen ylläpito ja omistettujen osakkeiden määrät sekä ostettujen asioiden aiheuttamien muutosten asettaminen voimaan. Suurin osa komennoista koostuu pelaajan syötteen lukemisesta sekä käyttöliittymän päivittämisestä niiden perusteella. kaikki kommunikointi käyttäjän ja ohjelman välillä tapahtuu hiirellä helpon käyttäjäkokemuksen luomiseksi.
 
   ```mermaid
 sequenceDiagram
