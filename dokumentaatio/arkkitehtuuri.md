@@ -95,25 +95,31 @@ monet sovelluksen erityisesti käyttöliittymän käyttämistä muuttujista tule
  ### Luokkakaavio main.py:n suhteista
  ```mermaid
  classDiagram
-      Main "*" -- stockcreator
-       Main "*" -- Finance
-        Main "*" -- Items
-         Main "*" -- database_op
-         Main "*" -- endinginit
-         Main "*" -- stats
+      Main -- stockcreator
+       Main -- Finance
+        Main -- items
+         Main -- database_op
+         Main -- endinginit
+         Main -- stats
+         Main -- daychange
+         Main -- endinginit
+         Main -- database_op
+         daychange -- day_change_operator
+         daychange -- items
       class Main{
           start_screen()
           run()
           initialize()
       }
-      class Items{
+      class items{
           Item()
           itempool
           itemgiver()
       }
-      stockcreator "*" -->  stockhistory
+      stockcreator -- stockhistory
       class stockcreator{
-          create_stocks
+          create_stocks()
+          create_historyview()
           
       }
       
@@ -123,11 +129,40 @@ monet sovelluksen erityisesti käyttöliittymän käyttämistä muuttujista tule
           
       }
       
+      class database_op{
+          class Database{
+          __init__()
+          cleartable()
+          namechange()
+          insertintable()
+          exist()
+          geths()
+          }
+      }
+      
       class finance{
           Finance()
       }
+      class stats{
+      Stats()
+      Ownedstocks()
+      Timer()
+      Switch()
+          
+      }
       class finance{
-          Finance()
+      Finance()
+      }
+      class daychange{
+      daychange()
+      summary_driver()
+      }
+      class day_change_operator{
+      summary()
+      finance_update()
+      }
+      class endinginit{
+      need_new_name()
       }
       
 ```
