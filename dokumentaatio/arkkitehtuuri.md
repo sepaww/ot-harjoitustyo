@@ -184,7 +184,7 @@ sequenceDiagram
   User->>Main: Player starts the program
   Main->>Main: starting_screen()
   Main->>start_inputs: start_inputs()
-  Main->>draw_start_screen()
+  Main->>draw_start_screen: draw_startscreen()
   User->>start_inputs: Player clicks start
   Main->>Main: initialize()
   Main->>Main: character_select()
