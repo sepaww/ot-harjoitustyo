@@ -32,6 +32,9 @@ Jos pelaajalla ei ole käteisvarantoja maksaa kuluja tämä häviää pelin ja s
 valittu hahmo vaikuttaaa pelaajan aloitusrahan määrään, tuloihin sekä menoihin. Myös yksi tärkeä elementti hahmolla on rerollprice, joka määrittelee miten tehokkaasti tämä voi hyödyntää kauppaa. Hahmon vaikeustasoon vaikuttaa myös menojen skaalautuminen, mikä ilmoitetaan hahmovalikossa.
  
 monet sovelluksen erityisesti käyttöliittymän käyttämistä muuttujista tulee stats.py tiedostosta, joka lukee tarvitut tiedot config.txt tiedostosta. stats on (ainakin yritetty) turvattu try-except lausekkeilla, jotta peliin ei pääsisi vääriä pelin kaatavia arvoja. config.txt tiedoston kautta pystyy muuttamaan haluttuja pelin arvoja, kuten tekstin väriä tai yleistä väriteemaa tai fontteja.
+
+pelin pysyväistalletuksesta huolehtii highscore.db, jonka sisällä säilötään hs taulua, joka sisältää edelliset ennätykset ja pelaajien minimerkit. tiedoston voi tyhjentää huoletta, sillä sitä operoiva database_op.py on koodattu luomaan tiedostoon uusi taulu sen puuttuessa.
+
  ### Luokkakaavio pelin korkean tason kansioiden suhteista
  ```mermaid
  classDiagram
@@ -118,6 +121,7 @@ monet sovelluksen erityisesti käyttöliittymän käyttämistä muuttujista tule
       }
       stockcreator -- stockhistory
       class stockcreator{
+          names
           create_stocks()
           create_historyview()
           
@@ -149,6 +153,7 @@ monet sovelluksen erityisesti käyttöliittymän käyttämistä muuttujista tule
           
       }
       class finance{
+      character_list
       Finance()
       }
       class daychange{
@@ -164,6 +169,8 @@ monet sovelluksen erityisesti käyttöliittymän käyttämistä muuttujista tule
       }
       
 ```
+
+
 ## Päätoiminnallisuus
 Kuvataan pelin toimintaa neljällä sekvenssi kaaviolla.
 
@@ -243,6 +250,8 @@ sequenceDiagram
 seuraavaksi tapahtuu pelin sisäisen päivän vaihto ja siihen liittyvät toimenpiteet. Jos pelaajan käteisvarat eivät kuitenkaan riitä menoihin, peli siirtyy päivänvaihdon sijaan lopetusruutuun.
 
 ### Pelin päivän vaihto
+Päivän vaihdon operaatioista huolehtii kansion day_change_op sisällä olevan tiedostot. daychange.py on ikäänkuin ajaja day_change_operator.py:lle. jälkimmäisessä taas on päivän vaihtoo liittyvät pelilogiikan kannalta tärkeät asiat, kuten nettoarvon laskeminen sekä rahatilanteen päivittäminen ja kulujen lisäys.
+
 
   ```mermaid
 sequenceDiagram
@@ -270,7 +279,7 @@ sequenceDiagram
 ```
 
 ### lopetus ruutu ja ennätyslista
-
+Seuraavat tapahtumat alkavat pelaajan hävitessä pelin. operaatioihin kuuluu ennätystaulun päivittäminen, pelaajan nimen ottaminen ja mahdollisuus antaa pelaajan pelata peliä uudestaan tai lopettaa pelaaminen.
   ```mermaid
 sequenceDiagram
   actor User
