@@ -68,3 +68,7 @@
 - ohjelmaa lintattu.
 - hakemistorakenne uudistettu.
 - arkkitehtuuri sekä vaatimusmäärittely päivitetty ajantasalle.
+
+# 11.12.2022
+- dokumentaatiota paranneltu
+- testausdokumenttilisätty
