@@ -11,11 +11,17 @@ Itsekeksitty klikkeri/resurssien managerointi peli, jossa kilpaillaan sekä infl
 
 ##Dokumentaatio:
 [releasevko5](https://github.com/sepaww/ot-harjoitustyo/releases/tag/viikko5)
+
 [käyttöohjeet](dokumentaatio/käyttöohjeet.md)
+
 [tuntikirjanpito](dokumentaatio/tuntikirjanpito.md)
+
 [määrittelydokumentti](dokumentaatio/vaatimusmaarittely.md)
+
 [changelog](dokumentaatio/changelog.md)
+
 [arkkitehtuuri](dokumentaatio/arkkitehtuuri.md)
+
 
 ##Näin saat pelin toimimaan:
 
