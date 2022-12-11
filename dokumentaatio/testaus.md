@@ -29,4 +29,5 @@ peli on toteutettu määrittelydokumentin vaatimusten perustein. Väärien arvoj
 # Laatuongelmat pelin koodissa:
 - Pelin tiedostojen tulee sisältää config.txt sekä highscore.db nykyisillä paikoillaan, sillä muuten peli ei aukea. Ominaisuuden olisi voinut toteuttaa niin, että nämä tiedostoto voisivat sijaita missä vain.
 -  Jokainen stats.py:tä hyödyntävä tiedosto lukee sen uudelleen (stats luetaan noin 7 kertaaa pelin aikana). Ominaisuuden olisi saattanut voida toteuttaa järkevämminkin.
--  
+-  Projekti oli itselleni ensimmäinen useamman tiedoston sisältävä projekti. Näin järkikäteen olisin voinut hyödyntää pythonin class rakennetta enemmän ja näin vähentää muuttujien määrää, jota funktiot ottavat vastaan (erityisesti main.py:n kanssa)
+
