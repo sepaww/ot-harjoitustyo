@@ -2,15 +2,11 @@
 
 ## Sovelluksen tarkoitus
 
-Sovellus pyörittää leikkimielistä sijoituspeliä, jossa pelaajan tavoitteena on selvitä alati nousevasta vuokrasta
-sijoittamalla järkevästi annettuihin osakkeisiin. Pelaajalle jaetaan osakkeista tarvittavat tiedot,
-kuten hinta, nousu- tai laskusuhdanne ja osakehistoria, joiden avulla tämä voi tehdä optimaalisia investointeja. Pelin kulku seuraa
-roguelite tyyliä riskin ja palkkion periaattein. Pelaajan on oltava valmis ottamaan riskejä, mutta liiallinen riski tuo konkurssin
+Sovellus pyörittää leikkimielistä sijoituspeliä, jossa pelaajan tavoitteena on selvitä alati nousevasta inflaatiosta sijoittamalla järkevästi annettuihin osakkeisiin sekä keksityn kaupan antimiin. Pelaajalle jaetaan osakkeista tarvittavat tiedot,
+kuten hinta, nousu- tai laskusuhdanne ja osakehistoria, joiden avulla tämä voi tehdä optimaalisia investointeja. Pelin kulku seuraa roguelike tyyliä riskin ja palkkion periaattein. Pelaajan on oltava valmis ottamaan riskejä, mutta liiallinen riski tuo konkurssin.
 
 ## Pelaaja
-Pelaaja tullee toimimaan anonyyminä henkilönä (jollei hahmovalikoimaa lisätä peliin)\
-Jos hahmovalikoima lisätään, voi jokaisella hahmolla olla eriävä 
-tulo sekä meno määrä tai jokin sijoitusta auttava ns. perkki.
+Pelaaja saa valita yhden neljästä hahmosta, joilla on merkittävästi pelin kulkuun vaikuttavia ominaisuuksia. Eli eri hahmojen lähtökohdat ovat eri esim. toinen aloittaa suurilla rahamäärillä ja suurilla menoilla kun taas toinen pienillä.
 
 ## Käyttöliittymäluonnos
 Peli koostuu 6 eri näkymästä:
@@ -25,7 +21,7 @@ Peli koostuu 6 eri näkymästä:
 ##Perusversion tarjoama toiminnallisuus
 - aloitusruutu, jossa start näppäin
 
-- peliruutu, jossa pelaaja voi ostaa osakkeita tai tuotteita marketista. peliruutu siirtyy summary ruutuun ajan loppuessa tai pelaajan erikseen end-näppäintä painaessa. peliruudusta pelaaja myös näkee rahansa. sovelluslogiikkaan kuuluu kurssien teko sekä päivitys toiminnot, kauppaan tuotteiden lisäys, sekä rahallisten toimintojen toteutus pelaajan rahasaldoon oston tapahtuessa.
+- peliruutu, jossa pelaaja voi ostaa osakkeita tai tuotteita marketista. peliruutu siirtyy summary ruutuun ajan loppuessa tai pelaajan erikseen end-näppäintä painaessa. peliruudusta pelaaja myös näkee rahansa. sovelluslogiikkaan kuuluu kurssien teko sekä päivitys toiminnot, kauppaan tuotteiden lisäys, sekä rahallisten toimintojen toteutus pelaajan rahasaldoon oston tapahtuessa. peliruudussa tulee pelaajan voida myös tarkastella osakkeiden kursseja.
 - summary ruutu, jossa pelaaja voi tarkastella netto arvoaan, eli omistamiensa osakkeiden yhteisarvoa sekä käteisen summaa. pelaaja voi myös tarkastella uusia nousseita kulujaan. sovelluslogiikkaan kuuluu päivän vaihtoon liittyvät ominaisuudet, kuten pelaajan rahasaldon päivittäminen, pelin häviämisen ehtojen täyttymisen tarkastelu, nettoarvon laskeminen sekä tarvittavien ominaisuuksien alustaminen/päivittäminen tulevaa päivää varten.
 - loppu ruutu, jossa pelaaja voi tarkastella ennätys taulukkoa sekä listoille päästessään kirjoittaa neli-merkkisen nimensä, joka tallennetaan databaseen highscore. Sovelluslogiikkaan kuuluu databasen ylläpito, nimen kirjoittamista hallitseva ohjelma sekä viimeinen näkymä, jossa pelaaja voi joko pelata uudelleen tai lopettaa pelaamisen, mikä sammuttaa ohjelman
 
