@@ -1,6 +1,6 @@
 
 # Pörssipeli projekti
-Itsekeksitty klikkeri/resurssien managerointi peli, jossa kilpaillaan sekä inflaatiota että aikaa vastaan
+Itsekeksitty klikkeri/resurssien managerointi peli, jossa kilpaillaan sekä inflaatiota että aikaa vastaan.
 
 ## Ohjeet:
 -Peliä pelataan kokonaisuudessaan hiirellä. hiiren vasemmalla painikkeella voi ostaa osakkeen/tuotteen kaupasta ja oikealla painikkeella myydä omistamiaan osakkeita. 
