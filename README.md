@@ -22,6 +22,7 @@ Itsekeksitty klikkeri/resurssien managerointi peli, jossa kilpaillaan sekä infl
 
 [arkkitehtuuri](dokumentaatio/arkkitehtuuri.md)
 
+[testausdokumentti](dokumentaatio/testaus.md)
 
 ##Näin saat pelin toimimaan:
 
