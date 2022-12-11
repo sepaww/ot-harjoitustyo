@@ -3,7 +3,8 @@
 Itsekeksitty klikkeri/resurssien managerointi peli, jossa kilpaillaan sekä inflaatiota että aikaa vastaan.
 
 ##Dokumentaatio:
-[releasevko5](https://github.com/sepaww/ot-harjoitustyo/releases/tag/viikko5)
+
+[releases](https://github.com/sepaww/ot-harjoitustyo/releases)
 
 [käyttöohjeet](dokumentaatio/käyttöohjeet.md)
 
