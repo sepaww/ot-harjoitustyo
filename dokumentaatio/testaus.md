@@ -1,4 +1,4 @@
-#Testausdokumentti
+# Testausdokumentti
 
 Pelin koodin testaamiseen on hyödynnetty unittest moduulia. Testit kattavat pelilogiikan kannalta olennaiset tiedostot. Käyttöliittymän koodia ei ole sisällytetty testikattavuuteen.
 
