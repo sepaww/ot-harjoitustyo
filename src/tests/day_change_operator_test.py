@@ -3,24 +3,17 @@ import unittest
 import services.finance.finance as F
 import services.finance.stockcreator as st_cr
 import services.day_change_op.day_change_operator as op
+import repositories.stats as s
 
 
-class Ownedstocks():
-    def __init__(self):
-        self.owned = [0]*10
-
-
-class Timer():
-    def __init__(self):
-        self.day = 1
 
 
 class Test_DOP(unittest.TestCase):
 
     def setUp(self):
-        self.time = Timer()
+        self.time = s.Timer()
         self.time.day = 4
-        self.owned = Ownedstocks()
+        self.owned = s.Ownedstocks()
         self.finance = F.Finance(("Jami", "your average 'Jantteri'",
                                  "average", 300, 50, 50, 25, [20, 20, 30, 30, 40, 40], 50))
         self.stocks = st_cr.create_stocks()
