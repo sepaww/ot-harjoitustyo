@@ -72,4 +72,4 @@ class Data_base_op:
         self.names = self.data.execute("SELECT name FROM hs").fetchall()
         self.names = [i[0] for i in self.names]
         self.score_list = [(self.names[i], self.days[i])
-                          for i in range(len(self.days))]
+                           for i in range(len(self.days))]

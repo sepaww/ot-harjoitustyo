@@ -92,7 +92,7 @@ def run(list_of_things):
         time_difference = pygame.time.get_ticks()-timer.start_time
         # game_loop
         item_list = game_loop(shop_switch, whole_finance,
-                            day_switch, owned, stocks, item_list)
+                              day_switch, owned, stocks, item_list)
         # Draws finance info
         draw_screen.draw_info(whole_finance, time_difference, timer, screen)
         # Checking if player has clicked end or timer has run out.
@@ -175,7 +175,8 @@ def ending_screen(days):
     while True:
         if need_name:
             draw_en.draw_name_need(data_base, screen)
-            ret_tuple = end_inputs.name_inputs(data_base, need_name, cursor_position)
+            ret_tuple = end_inputs.name_inputs(
+                data_base, need_name, cursor_position)
             need_name, cursor_position = ret_tuple[0], ret_tuple[1]
         else:
             draw_en.draw_hs(data_base, screen)

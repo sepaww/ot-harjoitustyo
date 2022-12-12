@@ -107,7 +107,7 @@ def draw_character_select(screen, chr_list):
 
 
 def draw_shop(item_list, screen, finance):
-    
+
     draw_hl.draw_highlight(screen, Stat.screen_width/2+50, 668, 400, 88)
     shop_txt = Stat.start_font.render("stocks", True, Stat.txt_color)
     screen.blit(shop_txt, (Stat.screen_width/2+140, 660+10))
@@ -136,7 +136,7 @@ def draw_shop(item_list, screen, finance):
 
 
 def draw_stocks(stocks, screen):
-    
+
     day_stocks = stocks[len(stocks)-1]
     start_height = 10
     for stock in day_stocks:

@@ -61,9 +61,9 @@ def item_giver():
     item_comp_two = item_pool[r(0, length)]
     item_comp_three = item_pool[r(0, length)]
     item_one = Item(item_comp_one[0], item_comp_one[1],
-                   item_comp_one[2], item_comp_one[3], item_comp_one[4])
+                    item_comp_one[2], item_comp_one[3], item_comp_one[4])
     item_two = Item(item_comp_two[0], item_comp_two[1],
-                   item_comp_two[2], item_comp_two[3], item_comp_two[4])
+                    item_comp_two[2], item_comp_two[3], item_comp_two[4])
     item_three = Item(item_comp_three[0], item_comp_three[1],
-                     item_comp_three[2], item_comp_three[3], item_comp_three[4])
+                      item_comp_three[2], item_comp_three[3], item_comp_three[4])
     return [item_one, item_two, item_three]

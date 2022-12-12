@@ -13,7 +13,8 @@ def draw_thing(item, screen, pos_x, pos_y):
 
     head_txt = Stat.info_font.render(item.name, True, Stat.txt_color)
     effect_txt = Stat.small_font.render(item.effect_str, True, Stat.txt_color)
-    description = Stat.small_font.render(item.description, True, Stat.txt_color)
+    description = Stat.small_font.render(
+        item.description, True, Stat.txt_color)
     price_sentence = Stat.info_font.render("Price:", True, Stat.txt_color)
     price = Stat.info_font.render(str(item.price), True, Stat.txt_color)
     screen.blit(head_txt, (pos_x+10, pos_y+10))
@@ -26,7 +27,7 @@ def draw_thing(item, screen, pos_x, pos_y):
 def draw_sold(font, screen, pos_x, pos_y):
     sold_txt = font.render("sold", True, Stat.txt_color)
     screen.blit(sold_txt, (pos_x+10, pos_y
-+90))
+                           + 90))
 
 
 def draw_chr(screen, chr_info, width, height):

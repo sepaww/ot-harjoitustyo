@@ -26,7 +26,7 @@ def name_inputs(data_base, name_bool, cursor_position):
                         data_base.score_list[data_base.ind][0] = "____"
                     else:
                         data_base.score_list[data_base.ind][0] = data_base.score_list[data_base.ind][0][:cursor_position -
-                                                                                                  1] + "_" + data_base.score_list[data_base.ind][0][cursor_position:]
+                                                                                                        1] + "_" + data_base.score_list[data_base.ind][0][cursor_position:]
 
                     cursor_position -= 1
             else:

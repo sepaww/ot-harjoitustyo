@@ -6,8 +6,6 @@ import services.day_change_op.day_change_operator as op
 import repositories.stats as s
 
 
-
-
 class Test_DOP(unittest.TestCase):
 
     def setUp(self):
