@@ -34,7 +34,9 @@ def create_stocks():
 
 
 def create_history_view(stocks, index):
-    """counts the percentual differences in each days stockprice-minprice compared to maxvalue-minvalue of selected stock.
+    """counts the percentual differences in each days
+    stockprice-minprice compared to maxvalue-minvalue
+    of selected stock.
     then returns the calculated percentual values.
 
     Args:
