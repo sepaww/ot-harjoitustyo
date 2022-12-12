@@ -13,7 +13,7 @@ class Test_DOP(unittest.TestCase):
     def setUp(self):
         self.time = s.Timer()
         self.time.day = 4
-        self.owned = s.Ownedstocks()
+        self.owned = s.Owned_stocks()
         self.finance = F.Finance(("Jami", "your average 'Jantteri'",
                                  "average", 300, 50, 50, 25, [20, 20, 30, 30, 40, 40], 50))
         self.stocks = st_cr.create_stocks()
@@ -35,11 +35,11 @@ class Test_DOP(unittest.TestCase):
     def test_summary_some_owned(self):
         self.owned.owned[1] += 1
         summ = op.summary(self.stocks, self.finance, self.owned)
-        curstock = self.stocks[-1]
+        cur_stock = self.stocks[-1]
 
         sum_of_money = 0
-        for i in range(len(curstock)):
+        for i in range(len(cur_stock)):
             if self.owned.owned[i] > 0:
-                sum_of_money += curstock[i][1]*self.owned.owned[i]
+                sum_of_money += cur_stock[i][1]*self.owned.owned[i]
         sum_of_money += self.finance.money
         self.assertEqual(summ, sum_of_money)
