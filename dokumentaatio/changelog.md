@@ -72,3 +72,6 @@
 # 11.12.2022
 - dokumentaatiota paranneltu
 - testausdokumenttilisätty
+
+#12.12.2022
+- koodin syntaxia paranneltu vastaamaan snake_casea
