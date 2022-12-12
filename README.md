@@ -1,3 +1,4 @@
+Kommentti(Peli alkaa nyt olemaan lopullisessa muodossaan jollei vko6 arvioinnissa ilmene jotakin hirveää möhliä.)
 
 # Pörssipeli projekti
 Itsekeksitty klikkeri/resurssien managerointi peli, jossa kilpaillaan sekä inflaatiota että aikaa vastaan.
