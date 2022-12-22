@@ -105,7 +105,7 @@ pelin pysyväistalletuksesta huolehtii highscore.db, jonka sisällä säilötä�
       Main -- stock_creator
        Main -- finance
         Main -- items
-         Main -- data_base_op
+         
          Main -- ending_init
          Main -- stats
          Main -- day_change
