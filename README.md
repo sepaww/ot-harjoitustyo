@@ -3,7 +3,7 @@ Kommentti(Peli alkaa nyt olemaan lopullisessa muodossaan jollei vko6 arvioinniss
 # Pörssipeli projekti
 Itsekeksitty klikkeri/resurssien managerointi peli, jossa kilpaillaan sekä inflaatiota että aikaa vastaan.
 
-##Dokumentaatio:
+## Dokumentaatio:
 
 [releases](https://github.com/sepaww/ot-harjoitustyo/releases)
 
@@ -19,7 +19,7 @@ Itsekeksitty klikkeri/resurssien managerointi peli, jossa kilpaillaan sekä infl
 
 [testausdokumentti](dokumentaatio/testaus.md)
 
-##Näin saat pelin toimimaan:
+## Näin saat pelin toimimaan:
 
 1. Asennetaan riippuvuudet komennolla:
 
@@ -27,7 +27,7 @@ Itsekeksitty klikkeri/resurssien managerointi peli, jossa kilpaillaan sekä infl
 poetry install
 ```
 
-2. Käynnistään peli komennolla:
+2. Käynnistetään peli komennolla:
 
 ```bash
 poetry run invoke start
@@ -46,13 +46,13 @@ poetry run invoke test
 
 ### Testikattavuus
 
-Testikattavuusraportin voi generoida komennolla:
+Testikattavuusreportin voi generoida komennolla:
 
 ```bash
 poetry run invoke coverage-report
 ```
 
-Raportin voi lukea _htmlcov_-hakemistosta tai terminaalista.
+Reportin voi lukea _htmlcov_-hakemistosta tai terminaalista.
 
 ### Pylint
 
