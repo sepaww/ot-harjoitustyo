@@ -111,8 +111,8 @@ pelin pysyväistalletuksesta huolehtii highscore.db, jonka sisällä säilötä�
          Main -- day_change
          Main -- ending_init
          Main -- Data_base_op
-         daychange -- day_change_operator
-         daychange -- items
+         day_change -- day_change_operator
+         day_change -- items
       class Main{
           start_screen()
           run()
