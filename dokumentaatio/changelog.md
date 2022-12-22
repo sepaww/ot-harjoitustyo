@@ -73,5 +73,8 @@
 - dokumentaatiota paranneltu
 - testausdokumenttilisätty
 
-#12.12.2022
+# 12.12.2022
 - koodin syntaxia paranneltu vastaamaan snake_casea
+
+# 22.12.2022
+- dokumentaatioon lisätty muutama huomio sekä syntaksia korjattu.
