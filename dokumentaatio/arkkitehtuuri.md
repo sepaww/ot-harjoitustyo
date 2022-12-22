@@ -137,7 +137,7 @@ pelin pysyväistalletuksesta huolehtii highscore.db, jonka sisällä säilötä�
           
       }
       
-      class Databaseop{
+      class Data_base_op{
           clear_table()
           name_change()
           insert_in_table()
