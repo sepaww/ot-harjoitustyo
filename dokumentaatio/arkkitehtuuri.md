@@ -312,3 +312,9 @@ sequenceDiagram
   main->>main: back to starting screen loop
 ```
 
+## Rakenteeseen jääneitä virheitä
+- funktio run, jossa pyörii pelin pää looppi ottaa vastaan liian suuren määrän muuttujia. Tilanteen voisi korjata muokkaamalla main.py:n funktioita yhden luokan Main() alle, jolloin luokalle voisi asettaa yhteisiä muuttujia.
+- Kuten koodikatselmoinnissa arvioija totesi, on koodissa useita suuria muuttujia, joista luetaan peliin tarvittavia muuttujia. Nämä olisi voinut siirtää omiin teksti tiedostoihinsa, joista peli voisi lukea ne.
+- Databasen init kutsuu luokan sisäisen funktion, joka saattaisi aiheuttaa virheitä peliä laajennettaessa. Databasea käsittelevä Data_base_op nimi virheensä lisäksi on melko tökerö ratkaisu kuten arvioinnissa on todettu. Databaseen voisi connectata erillisessä tiedostossa, josta Data_base_op voisi lukea tiedot ja käsitellä niitä. Tällöin single responsibility periaate toteutuisi paremmin tämän hetkisen yhdistelmä ratkaisun sijaan.
+- stats.py tarkistaa lukemiensa konfiguraatio muuttujien kelpoisuuden sijoittamalla ne pygamen draw komentoihin. Tapa on melko outo, mutten keksinyt muita tapoja tarkistaa, onko annettu väri tosiaan väri vai satunnaista tekstiä.
+- Yleisellä tasolla peli päivittää ruudun tilannetta aivan liian monta kertaa turhaan. Kuitenkaan tehokkuus ei ollut projektin tavoitteena joten välikös tuolla, mutta koomisen paljon laskentaa yksinkertaiseksi klikkeri peliksi.
