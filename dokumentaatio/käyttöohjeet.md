@@ -5,7 +5,7 @@
 - Mitä pidemmälle päivissä pelaaja pääsee, sitä parempi hänen ennätyksensä on.
 - päivien välissä (ajastimen loppuessa) pelaajan käteisvaroista vähennetään menot. jos pelaajalla ei ole tarpeeksi käteistä päivän lopussa maksaa hän häviää pelin.
 - osakkeiden kurssit vaihtelevat melko villisti päivien välissä sekä kaupan tarjonta vaihtuu.
-
+- Huom! pelin rahalogiikan tasapaino on alustava eikä järkevästi tasapainotettu.
 
 
 ## Asennus
