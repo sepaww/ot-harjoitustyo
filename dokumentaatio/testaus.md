@@ -1,8 +1,8 @@
-# Testausdokumentti
+# Testaus dokumentti
 
 Pelin koodin testaamiseen on hyödynnetty unittest moduulia. Testit kattavat pelilogiikan kannalta olennaiset tiedostot. Käyttöliittymän koodia ei ole sisällytetty testikattavuuteen.
 
-## Yksikkötestaus ja integraatio testaus.
+## Yksikkö- ja integraatiotestaus.
 
 Sovelluslogiikan yksikkötesteistä huolehtivat tiedostoa vastaavasti nimetyt tests kansion testitiedostot.
 Sovelluksen pelilogiikka, joka sijaitsee kansiossa services on melko kattavasti testattu.
@@ -24,10 +24,10 @@ Ne on myös turvattu try-except komennoilla, jottei peliin pääse vääriä arv
 
 ## Toiminnallisuudet
 
-peli on toteutettu määrittelydokumentin vaatimusten perustein. Väärien arvojen antaminen sovellukselle sen juostessa on mahdotonta syystä, että käyttöliittymänä toimii vai hiiri. config.txt on ainakin yritetty turvata vääriä arvoja vastaan.
+peli on toteutettu määrittelydokumentin vaatimusten perustein. Väärien arvojen antaminen sovellukselle sen juostessa on mahdotonta syystä, että käyttöliittymänä toimii vain hiiri. config.txt on ainakin yritetty turvata vääriä arvoja vastaan.
 
 # Laatuongelmat pelin koodissa:
-- Pelin tiedostojen tulee sisältää config.txt sekä highscore.db nykyisillä paikoillaan, sillä muuten peli ei aukea. Ominaisuuden olisi voinut toteuttaa niin, että nämä tiedostoto voisivat sijaita missä vain.
+- Pelin tiedostojen tulee sisältää config.txt sekä highscore.db nykyisillä paikoillaan, sillä muuten peli ei aukea. Ominaisuuden olisi voinut toteuttaa niin, että nämä tiedostot voisivat sijaita missä vain.
 -  Jokainen stats.py:tä hyödyntävä tiedosto lukee sen uudelleen (stats luetaan noin 7 kertaaa pelin aikana). Ominaisuuden olisi saattanut voida toteuttaa järkevämminkin.
--  Projekti oli itselleni ensimmäinen useamman tiedoston sisältävä projekti. Näin järkikäteen olisin voinut hyödyntää pythonin class rakennetta enemmän ja näin vähentää muuttujien määrää, jota funktiot ottavat vastaan (erityisesti main.py:n kanssa)
+-  Projekti oli itselleni ensimmäinen useamman tiedoston sisältävä projekti. Näin jälkikäteen olisin voinut hyödyntää pythonin class rakennetta enemmän ja täten vähentää muuttujien määrää, joita funktiot ottavat vastaan (erityisesti main.py:n kanssa)
 
