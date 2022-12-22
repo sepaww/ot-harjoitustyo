@@ -3,11 +3,15 @@
 ## Rakenne
 Peli on jaoteltu useisiin kansioihin niiden tyypin perusteella. Ohjelmaa pyörittää tiedosto main.py, joka on suoraan src kansiossa.
 - pakkaus src sisältää pelin tiedostot
-  - inputs sisältää pelaajan hiiren liikkeitä ja inputteja tarkkailevan koodin, joka kutsuu/muokkaa sovelluslogiikan mukaisesti pelin asioita.
+- ui sisältää käyttöliittymän koodia
+  - inputs sisältää pelaajan hiiren liikkeitä ja inputteja tarkkailevan koodin, joka kutsuu/muokkaa sovelluslogiikan     mukaisesti pelin asioita.
   - screen sisältää koodin, jolla piirretään käyttöliittymään pelin ruutu.
   - tools sisältää muutamia toistoa vähentäviä valmiita funktioita, joiden avulla voidaan piirtää pelin ruutuun asioita.
-  - finance sisältää pelaajan rahatilannetta kuvaavan koodin.
-  - shop sisältää pelin sisäisen kaupan logiikan.
+- services sisältää pelilogiikkaa pyörittävät tiedostot
+  - finance sisältää pelin sisäisen raha logiikan
+  - day_change_op sisältää päivän vaihtoon liittyvän pelilogiikan
+  - ending_screen_op sisältää pelin jälkeisiin tapahtumiin tarvittavan pelilogiikan
+- repositories sisältää pysyväistietoa käsittelevät tiedostot
  
  ## Käyttöliittymä
  
@@ -23,7 +27,7 @@ Peli on jaoteltu useisiin kansioihin niiden tyypin perusteella. Ohjelmaa pyörit
  
  ## Sovelluslogiikka
  Sovellusta pyörittää tiedosto main.py, josta kutsutaan kuhunkin pelin tilanteeseen liittyvät funktio sekä käyttöliittymän kontrollointi sekä inputit.
- Peli lähtee käyntiin funktiolla start__screen, josta kutsutaan funktio intialize, josta alustetaan suurin osa pelissä tarvittavista rakeinteista, kuten osakkeet, kaupan sisältö, pelaajan taloudellinen tilanne sekä osake historia. Initialize myös huolehtii pelaajan hahmo valinnasta. Kun hahmo on valittu siirtyy sovellus funktioon run, joka pyörittää itse peli looppia. run funktiosta kutsutaan tarvittavat input funktiot sekä draw_screen komennot peli-tilan ylläpitämiseen. run funktiosta voidaan myös päivittää pelaajan raha tilanne sekä kaupa sisältämät tuotteet.
+ Peli lähtee käyntiin funktiolla start_screen, josta kutsutaan funktio intialize, josta alustetaan suurin osa pelissä tarvittavista rakeinteista, kuten osakkeet, kaupan sisältö, pelaajan taloudellinen tilanne sekä osake historia. Initialize myös huolehtii pelaajan hahmo valinnasta. Kun hahmo on valittu siirtyy sovellus funktioon run, joka pyörittää itse peli looppia. run funktiosta kutsutaan tarvittavat input funktiot sekä draw_screen komennot peli-tilan ylläpitämiseen. run funktiosta voidaan myös päivittää pelaajan raha tilanne sekä kaupa sisältämät tuotteet.
  
 Kun ajastin loppuu tai pelaaja painaa end näppäintä, siirrytään day_change_op tiedostoihin, jotka vastaavat pelaajan nettoarvon laskemisesta sekä uuden päivän alustamisesta, eli tulojen lisäämisestä rahaan, menojen poistaminen rahoista sekä menojen korottaminen.
 
@@ -64,7 +68,7 @@ pelin pysyväistalletuksesta huolehtii highscore.db, jonka sisällä säilötä�
           }
       class day_change_op{
       day_change_operator.py
-      daychange.py
+      day_change.py
           }
       class screen{
       draw_ending.py
@@ -73,7 +77,7 @@ pelin pysyväistalletuksesta huolehtii highscore.db, jonka sisällä säilötä�
           }
       class inputs{
       start_inputs.py
-      endinputs.py
+      end_inputs.py
       inputs.py
           }
       class tools{
@@ -81,15 +85,15 @@ pelin pysyväistalletuksesta huolehtii highscore.db, jonka sisällä säilötä�
       draw_normal.py
           }
       class ending_screen_op{
-      endinginit.py
+      ending_init.py
       
           }
       class finance{
       effects.py
       finance.py
       items.py
-      stockcreator.py
-      stockhistory.py
+      stock_creator.py
+      stock_history.py
           }
      
       
@@ -98,15 +102,15 @@ pelin pysyväistalletuksesta huolehtii highscore.db, jonka sisällä säilötä�
  ### Luokkakaavio main.py:n suhteista (käyttöliittymän koodia ei ole otettu mukaan)
  ```mermaid
  classDiagram
-      Main -- stockcreator
+      Main -- stock_creator
        Main -- finance
         Main -- items
-         Main -- database_op
-         Main -- endinginit
+         Main -- data_base_op
+         Main -- ending_init
          Main -- stats
-         Main -- daychange
-         Main -- endinginit
-         Main -- Databaseop
+         Main -- day_change
+         Main -- ending_init
+         Main -- Data_base_op
          daychange -- day_change_operator
          daychange -- items
       class Main{
@@ -116,29 +120,29 @@ pelin pysyväistalletuksesta huolehtii highscore.db, jonka sisällä säilötä�
       }
       class items{
           Item()
-          itempool
-          itemgiver()
+          item_pool
+          item_giver()
       }
-      stockcreator -- stockhistory
-      class stockcreator{
+      stock_creator -- stock_history
+      class stock_creator{
           names
           create_stocks()
-          create_historyview()
+          create_history_view()
           
       }
       
-      class stockhistory{
+      class stock_history{
           stock_operator
           create_history
           
       }
       
       class Databaseop{
-          cleartable()
-          namechange()
-          insertintable()
+          clear_table()
+          name_change()
+          insert_in_table()
           exist()
-          geths()
+          get_hs()
           
       }
       
@@ -147,7 +151,7 @@ pelin pysyväistalletuksesta huolehtii highscore.db, jonka sisällä säilötä�
       }
       class stats{
       Stats()
-      Ownedstocks()
+      Owned_stocks()
       Timer()
       Switch()
           
@@ -156,15 +160,15 @@ pelin pysyväistalletuksesta huolehtii highscore.db, jonka sisällä säilötä�
       character_list
       Finance()
       }
-      class daychange{
-      daychange()
+      class day_change{
+      day_change()
       summary_driver()
       }
       class day_change_operator{
       summary()
       finance_update()
       }
-      class endinginit{
+      class ending_init{
       need_new_name()
       }
       
@@ -186,8 +190,8 @@ sequenceDiagram
   participant Main
   participant finance
   participant items
-  participant stockcreator
-  participant stockhistory
+  participant stock_creator
+  participant stock_history
   User->>Main: Player starts the program
   Main->>Main: starting_screen()
   Main->>start_inputs: start_inputs()
@@ -195,16 +199,16 @@ sequenceDiagram
   User->>start_inputs: Player clicks start
   Main->>Main: initialize()
   Main->>Main: character_select()
-  Main->>draw_screen: draw_character_select(characterlist)
-  Main->>inputs: character_select_input(characterlist)
+  Main->>draw_screen: draw_character_select(character_list)
+  Main->>inputs: character_select_input(character_list)
   User->>inputs: Player picks a character
-  Main->>stockcreator: create_stocks()
-  stockcreator->>stockhistory: create_history(stocks)
+  Main->>stock_creator: create_stocks()
+  stock_creator->>stock_history: create_history(stocks)
   Main->>finance:Finance(player_eco)
-  Main->>items: itemgiver()
-  Main->>stats: Ownedstocks()
+  Main->>items: item_giver()
+  Main->>stats: Owned_stocks()
   Main->>stats: Timer()
-  Main->>Main: run([stocks, money, owned, switch, itemlist, dayswitch, time])
+  Main->>Main: run([stocks, money, owned, switch, item_list, day_switch, time])
   #Game starts running in mainloop and player ends up losing
   Main->>Main: return from run back to starting_screen
   Main->>Main: ending_screen()
@@ -224,11 +228,11 @@ sequenceDiagram
   participant items
   participant draw_screen
   participant (tools)
-  Main->>Main: gameloop(shopswitch, wholefinance, dayswitch, owned, stocks, itemlist)
-  Main->>draw_screen: drawinfo(wholefinance, timedifference, timer, screen)
-  Main->>inputs: inputter_stock(owned, stocks, wholefinance, shopswitch, dayswitch)
-  Main->>draw_screen: drawstocks(stocks, screen)
-  Main->>draw_screen: drawowned(owned, screen)
+  Main->>Main: game_loop(shop_switch, whole_finance, day_switch, owned, stocks, item_list)
+  Main->>draw_screen: draw_info(whole_finance, time_difference, timer, screen)
+  Main->>inputs: inputter_stock(owned, stocks, whole_finance, shop_switch, day_switch)
+  Main->>draw_screen: draw_stocks(stocks, screen)
+  Main->>draw_screen: draw_owned(owned, screen)
   draw_screen->>(tools): certain unique pygame commands are used to draw needed elements on screen
   User->>inputs: Player leftclicks on a stock
   inputs->>finance: Finance.change_amount(stockprice)
@@ -236,16 +240,16 @@ sequenceDiagram
   inputs->>finance: Finance.change_amount_up(stockprice)
   User->>inputs: Player leftclicks on market-> shopswitch.take=True
   Main->>draw_screen: blank() (cleans the screen to evade drawn objects overlapping
-  Main->>inputs: inputter_market(shopswitch, itemlist, wholefinance, dayswitch)
-  Main->>draw_screen: drawshop(itemlist, screen)
+  Main->>inputs: inputter_market(shop_switch, item_list, whole_finance, day_switch)
+  Main->>draw_screen: draw_shop(item_list, screen)
   User->>inputs: Player leftclicks on an item
-  inputs->>effects: apply_effect(effects, financeinfo)
+  inputs->>effects: apply_effect(effects, finance_info)
   User->>inputs: Player clicks reroll
-  inputs->>finance: Finance.change_amount(Finance.rerollprice)
+  inputs->>finance: Finance.change_amount(Finance.reroll_price)
   inputs->>finance: Finance.reroll_doubler()
-  Main->>items: itemgiver()
-  User->>inputs: User clicks on end to end the current day -> dayswitch.take=True
-  Main->>draw_screen: wholeblank(screen)
+  Main->>items: item_giver()
+  User->>inputs: User clicks on end to end the current day -> day_switch.take=True
+  Main->>draw_screen: whole_blank(screen)
 ```
 seuraavaksi tapahtuu pelin sisäisen päivän vaihto ja siihen liittyvät toimenpiteet. Jos pelaajan käteisvarat eivät kuitenkaan riitä menoihin, peli siirtyy päivänvaihdon sijaan lopetusruutuun.
 
@@ -258,24 +262,24 @@ sequenceDiagram
   actor User
   participant inputs
   participant Main
-  participant daychange
+  participant day_change
   participant day_change_operator
   participant Finance
   participant items
-  participant stockhistory
+  participant stock_history
   participant draw_screen
-  Main->>daychange: daychange(stocks, wholefinance, owned, timer)
-  daychange->>items: itemgiver()
-  daychange->>stockhistory: stock_update(stocks)
-  stockhistory->>stockhistory: stock_operator(stock)
-  daychange->>day_change_operator: finance_update(finance, timer)
-  daychange->>day_change_operator: summary(stocks, finance, owned)
-  daychange->>Main: return summary, itemlist and stocks
-  Main->>daychange: summary_driver(screen, summary, wholefinance, summaryloop)
-  daychange->>draw_screen: draw_summary(screen, summary, finance)
-  daychange->>inputs: summaryinput(summaryloop)
+  Main->>day_change: day_change(stocks, whole_finance, owned, timer)
+  day_change->>items: item_giver()
+  day_change->>stock_history: stock_update(stocks)
+  stock_history->>stock_history: stock_operator(stock)
+  day_change->>day_change_operator: finance_update(finance, timer)
+  day_change->>day_change_operator: summary(stocks, finance, owned)
+  day_change->>Main: return summary, item_list and stocks
+  Main->>day_change: summary_driver(screen, summary, whole_finance, summary_loop)
+  day_change->>draw_screen: draw_summary(screen, summary, finance)
+  day_change->>inputs: summary_input(summary_loop)
   User->>inputs: Player clicks on "okey" button and a new day begins and timer resets
-  Main->>draw_screen: wholeblank() clears whole screen
+  Main->>draw_screen: whole_blank() clears whole screen
 ```
 
 ### lopetus ruutu ja ennätyslista
@@ -283,28 +287,28 @@ Seuraavat tapahtumat alkavat pelaajan hävitessä pelin. operaatioihin kuuluu en
   ```mermaid
 sequenceDiagram
   actor User
-  participant endinputs
+  participant end_inputs
   participant main
   participant Finance
   participant items
-  participant stockhistory
+  participant stock_history
   participant draw_ending
-  participant database_op
-  participant endinginit
+  participant data_base_op
+  participant ending_init
   main->>main: ending_screen(days)
-  main->>database_op: database=Databaseop()
-  database_op->>database_op: self.exist()
-  database_op->>database_op: self.geths()
-  main->>endinginit: need_new_name(days. database) (in this case player made it to highscoretable and name is needed)
-  main->>draw_ending: draw_name_need(database. screen)
-  main->>endinputs: nameinputs(database. needname. cursorposition)
-  User->>endinputs: player types their name and pressses enter ending loop
-  endinputs->>database_op: Database.namechange()
-  database_op->>database_op: Database.cleartable()
-  database_op->>database_op: Database.insertintable()
+  main->>database_op: data_base=Data_base_op()
+  data_base_op->>data_base_op: self.exist()
+  data_base_op->>data_base_op: self.get_hs()
+  main->>ending_init: need_new_name(days. data_base) (in this case player made it to highscoretable and name is needed)
+  main->>draw_ending: draw_name_need(data_base. screen)
+  main->>end_inputs: nameinputs(database. needname. cursorposition)
+  User->>end_inputs: player types their name and pressses enter ending loop
+  end_inputs->>data_base_op: Data_base.name_change()
+  data_base_op->>data_base_op: Data_base.clear_table()
+  data_base_op->>data_base_op: Data_base.insert_in_table()
   main->>draw_ending: draw_hs(database. screen) draw highscorelist
-  main->>endinputs: nextinputs()
-  User->>endinputs: player presses play again
+  main->>end_inputs: next_inputs()
+  User->>end_inputs: player presses play again
   main->>main: back to starting screen loop
 ```
 
